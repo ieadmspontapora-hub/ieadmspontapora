@@ -1,13 +1,27 @@
+import { Header } from "@/components/Header";
+import { HeroSection } from "@/components/HeroSection";
+import { AboutSection } from "@/components/AboutSection";
+import { LeadershipSection } from "@/components/LeadershipSection";
+import { WorshipSchedule } from "@/components/WorshipSchedule";
+import { EventsSection } from "@/components/EventsSection";
 import { PrayerRequestCard } from "@/components/PrayerRequestCard";
-import { MadeWithDyad } from "@/components/made-with-dyad";
+import { ContactSection } from "@/components/ContactSection";
+import { Footer } from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4">
-      <div className="w-full max-w-md">
+    <div className="min-h-screen">
+      <Header />
+      <main>
+        <HeroSection />
+        <AboutSection />
+        <LeadershipSection />
+        <WorshipSchedule />
+        <EventsSection />
         <PrayerRequestCard />
-      </div>
-      <MadeWithDyad />
+        <ContactSection />
+      </main>
+      <Footer />
     </div>
   );
 };
