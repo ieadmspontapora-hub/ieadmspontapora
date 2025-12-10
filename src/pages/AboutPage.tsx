@@ -104,6 +104,39 @@ const AboutPage = () => {
                   Por isso, esta igreja, além de incentivar a leitura da palavra de Deus, a oração e a evangelização, busca também dar oportunidade a tantos quantos queiram vir serrar fileiras neste exército de milhares de fiéis que, por cinco décadas, faz parte desta igreja vitoriosa, dando provas cabais de que a promessa de Cristo à igreja é real ao dizer que as <span className="font-bold text-blue-900">PORTAS DO INFERNO NÃO PREVALECERIAM CONTRA ELA</span>.
                 </p>
               </div>
+              
+              {/* Seção com Vídeo e Mensagem */}
+              <section className="py-16 px-4 bg-blue-50">
+                <div className="max-w-6xl mx-auto">
+                  <div className="grid md:grid-cols-2 gap-12 items-center">
+                    {/* Vídeo do YouTube */}
+                    <div className="aspect-w-16 aspect-h-9">
+                      <iframe
+                        src="https://www.youtube.com/embed/S7hRYTGtA4g"
+                        title="YouTube video player"
+                        frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        className="w-full h-64 md:h-96 rounded-lg shadow-lg"
+                      ></iframe>
+                    </div>
+
+                    {/* Mensagem */}
+                    <div>
+                      <h3 className="text-2xl md:text-3xl font-bold text-blue-900 mb-6">Aqui Jesus reina!</h3>
+                      <p className="text-gray-700 leading-relaxed mb-4">
+                        A nossa história teve início primeiramente no coração de Deus e se concretizou na terra através dos nossos inesquecíveis, Pr. Dr. Eliseu Feitosa de Alencar e Pastora Dulcila Araújo de Alencar. Hoje nossa igreja avança, levando o evangelho de Cristo a todo planeta, e não existe nenhum indício que esta obra vai parar.
+                      </p>
+                      <p className="text-gray-700 leading-relaxed mb-4">
+                        Podemos olhar para o ano de 2022, do Jubileu de Ouro, e dizer com a alma em festa: "grandes coisas fez o Senhor por nós, por isso estamos alegres". "A Igreja avança de joelhos". Ao longo do ano, o que contemplamos alegremente foi uma igreja – desde as crianças até a vitalidade – que procurou estar aos pés do Senhor, buscando, intercedendo e encontrando no Senhor grandes e benditas respostas de oração.
+                      </p>
+                      <p className="text-gray-700 leading-relaxed font-semibold text-blue-900">
+                        Assembleia de Deus de Mato Grosso do Sul. Aqui Jesus reina!
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </section>
             </div>
           </div>
         </section>
