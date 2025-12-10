@@ -74,19 +74,30 @@ const AboutPage = () => {
                 <div className="w-24 h-1 bg-yellow-500 mx-auto"></div>
               </div>
               
-              <p className="text-lg leading-relaxed mb-8 text-gray-700">
-                Nossa igreja "IEADMS" – Igreja Evangélica Assembleia de Deus de Mato Grosso do Sul foi fundado no dia 6 de dezembro de 1972, pelos Pastor Eliseu Feitosa de Alencar e a Pastora Dulcila Araújo de Alencar. Com a missão de cumprir a ordem primordial de Cristo – pregar o Evangelho.
-              </p>
-              
-              <p className="text-lg leading-relaxed mb-8 text-gray-700">
-                Uma igreja voltada para o século XXI, e, nesta visão de futuro, propõe-se a apresentar verdadeiramente Deus aqui na terra. 
-              </p>
+              <div className="grid md:grid-cols-2 gap-8 items-center mb-8">
+                <div>
+                  <p className="text-lg leading-relaxed mb-4 text-gray-700">
+                    Nossa igreja "IEADMS" – Igreja Evangélica Assembleia de Deus de Mato Grosso do Sul foi fundado no dia 6 de dezembro de 1972, pelos Pastor Eliseu Feitosa de Alencar e a Pastora Dulcila Araújo de Alencar. Com a missão de cumprir a ordem primordial de Cristo – pregar o Evangelho.
+                  </p>
+                  
+                  <p className="text-lg leading-relaxed mb-4 text-gray-700">
+                    Uma igreja voltada para o século XXI, e, nesta visão de futuro, propõe-se a apresentar verdadeiramente Deus aqui na terra.
+                  </p>
+                </div>
+                <div className="flex justify-center">
+                  <img 
+                    src="/images/igreja pp.jpg" 
+                    alt="Igreja IEADMS"
+                    className="w-full max-w-md h-auto rounded-lg shadow-lg"
+                  />
+                </div>
+              </div>
               
               {/* Seção de Fundadores */}
               <div className="flex flex-col md:flex-row items-center gap-8 mb-8">
                 <div className="flex-shrink-0">
                   <img 
-                    src="public/images/fundadores2.jpg" 
+                    src="/images/fundadores2.jpg" 
                     alt="Fundadores da IEADMS"
                     className="w-[250px] h-[186px] object-cover rounded-lg shadow-lg"
                   />
