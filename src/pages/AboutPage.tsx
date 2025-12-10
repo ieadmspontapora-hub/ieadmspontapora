@@ -86,7 +86,7 @@ const AboutPage = () => {
               <div className="flex flex-col md:flex-row items-center gap-8 mb-8">
                 <div className="flex-shrink-0">
                   <img 
-                    src="/fundadores2.jpg" 
+                    src="public/images/fundadores2.jpg" 
                     alt="Fundadores da IEADMS"
                     className="w-[250px] h-[186px] object-cover rounded-lg shadow-lg"
                   />
