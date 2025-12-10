@@ -1,12 +1,12 @@
-import { Header } from "@/components/Header";
-import { HeroSection } from "@/components/HeroSection";
-import { AboutSection } from "@/components/AboutSection";
-import { LeadershipSection } from "@/components/LeadershipSection";
-import { WorshipSchedule } from "@/components/WorshipSchedule";
-import { EventsSection } from "@/components/EventsSection";
-import { PrayerRequestCard } from "@/components/PrayerRequestCard";
-import { ContactSection } from "@/components/ContactSection";
-import { Footer } from "@/components/Footer";
+import Header from "@/components/Header";
+import HeroSection from "@/components/HeroSection";
+import AboutSection from "@/components/AboutSection";
+import LeadershipSection from "@/components/LeadershipSection";
+import WorshipSchedule from "@/components/WorshipSchedule";
+import EventsSection from "@/components/EventsSection";
+import PrayerRequestCard from "@/components/PrayerRequestCard";
+import ContactSection from "@/components/ContactSection";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   return (

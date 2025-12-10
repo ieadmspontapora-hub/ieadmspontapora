@@ -203,3 +203,5 @@ export const PrayerRequestCard = () => {
     </section>
   );
 };
+
+export default PrayerRequestCard;
