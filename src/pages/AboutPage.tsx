@@ -86,7 +86,7 @@ const AboutPage = () => {
                 </div>
                 <div className="flex justify-center">
                   <img 
-                    src="/images/igreja pp.jpg" 
+                    src="/images/fachada_01-550.jpg" 
                     alt="Igreja IEADMS"
                     className="w-full max-w-md h-auto rounded-lg shadow-lg"
                   />
