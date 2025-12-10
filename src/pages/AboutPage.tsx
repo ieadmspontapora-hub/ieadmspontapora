@@ -82,6 +82,23 @@ const AboutPage = () => {
                 Uma igreja voltada para o século XXI, e, nesta visão de futuro, propõe-se a apresentar verdadeiramente Deus aqui na terra. 
               </p>
               
+              {/* Seção de Fundadores */}
+              <div className="flex flex-col md:flex-row items-center gap-8 mb-8">
+                <div className="flex-shrink-0">
+                  <img 
+                    src="/fundadores2.jpg" 
+                    alt="Fundadores da IEADMS"
+                    className="w-[250px] h-[186px] object-cover rounded-lg shadow-lg"
+                  />
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold text-blue-900 mb-4">FUNDADORES</h3>
+                  <p className="text-lg text-gray-700">
+                    Saudoso Pastor Dr. Eliseu Feitosa de Alencar e Pastora Dulcila Araújo de Alencar.
+                  </p>
+                </div>
+              </div>
+              
               <div className="bg-blue-50 border-l-4 border-blue-900 p-6 mb-8">
                 <p className="text-lg leading-relaxed text-gray-700">
                   Por isso, esta igreja, além de incentivar a leitura da palavra de Deus, a oração e a evangelização, busca também dar oportunidade a tantos quantos queiram vir serrar fileiras neste exército de milhares de fiéis que, por cinco décadas, faz parte desta igreja vitoriosa, dando provas cabais de que a promessa de Cristo à igreja é real ao dizer que as <span className="font-bold text-blue-900">PORTAS DO INFERNO NÃO PREVALECERIAM CONTRA ELA</span>.
