@@ -41,28 +41,32 @@ const AboutPage = () => {
       names: [
         "Pr. Eliel Araújo de Alencar",
         "Pra. Jane C. M. de Alencar"
-      ]
+      ],
+      image: "/images/img pr alencar.jpg"
     },
     {
       title: "Presidentes Executivos",
       names: [
         "Pr. Felipe Augusto C. M. Alencar",
         "Pra. Hyanna Zanin de Alencar"
-      ]
+      ],
+      image: "/images/img pr felipe.jpg"
     },
     {
       title: "1º Vice-Presidentes",
       names: [
         "Pr. Elias Araújo de Alencar",
         "Pra. Ana Lúcia Alencar"
-      ]
+      ],
+      image: "/images/img elias.gif"
     },
     {
       title: "2º Vice-Presidentes",
       names: [
         "Pr. Jorcelino Pereira Nantes",
         "Pra. Magaly Nantes"
-      ]
+      ],
+      image: "/images/img jorcelino.gif"
     }
   ];
 
@@ -173,10 +177,10 @@ const AboutPage = () => {
                   {presidents.map((president, index) => (
                     <Card key={index} className="text-center hover:shadow-lg transition-shadow">
                       <CardContent className="p-6">
-                        {/* Espaço para imagem - 1024x925 */}
-                        <div className="w-full h-96 flex items-center justify-center mb-6">
+                        {/* Espaço para imagem - formato quadrado */}
+                        <div className="w-48 h-48 mx-auto mb-6">
                           <img 
-                            src={`/images/img pr alencar.jpg`} 
+                            src={president.image} 
                             alt={president.title}
                             className="w-full h-full object-cover rounded-lg shadow-lg"
                           />
