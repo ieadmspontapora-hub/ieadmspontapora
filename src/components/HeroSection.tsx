@@ -14,14 +14,24 @@ const HeroSection = () => {
 
   return (
     <section id="hero" className="relative h-screen flex items-center justify-center bg-gradient-to-br from-blue-900 to-blue-700">
-      {/* Background Image */}
-      <div className="absolute inset-0 bg-black opacity-40"></div>
+      {/* Background Image - Desktop */}
       <div 
-        className="absolute inset-0 bg-cover bg-center"
+        className="absolute inset-0 bg-cover bg-center hidden md:block"
         style={{
           backgroundImage: "url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')"
         }}
       ></div>
+
+      {/* Background Image - Mobile */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center md:hidden"
+        style={{
+          backgroundImage: "url('/images/Img HeaderSobreCell.png')"
+        }}
+      ></div>
+
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-black opacity-40"></div>
 
       {/* Content */}
       <div className="relative z-10 text-center text-white px-4">
