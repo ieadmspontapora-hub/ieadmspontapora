@@ -19,8 +19,12 @@ const Header = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <Link to="/" className="text-2xl font-bold text-blue-900">
-              Igreja
+            <Link to="/" className="flex items-center">
+              <img 
+                src="/images/img-Logo-IEADMS.png" 
+                alt="IEADMS Logo"
+                className="h-10 w-auto object-contain"
+              />
             </Link>
           </div>
 
@@ -41,8 +45,6 @@ const Header = () => {
             <button 
               onClick={() => scrollToSection('leadership')}
               className="text-gray-700 hover:text-blue-900 transition-colors"
-            >
-              Liderança
             </button>
             <button 
               onClick={() => scrollToSection('worship')}
