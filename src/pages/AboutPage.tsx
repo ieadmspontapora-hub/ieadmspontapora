@@ -72,7 +72,7 @@ const AboutPage = () => {
 
   const pastorsCampoPontaPorã = [
     {
-      title: "Pastor da Sede",
+      title: "Pastor do Templo Sede",
       names: [
         "Pr. Silvio Cardoso",
         "Pra. Delma Gomides de Oliveira"
