@@ -70,6 +70,17 @@ const AboutPage = () => {
     }
   ];
 
+  const pastorsCampoPontaPorã = [
+    {
+      title: "Pastores do Campo de Ponta Porã",
+      names: [
+        "Pr. Eliseu Feitosa de Alencar",
+        "Pra. Dulcila Araújo de Alencar"
+      ],
+      image: "/images/fundadores2.jpg"
+    }
+  ];
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -114,6 +125,40 @@ const AboutPage = () => {
                     alt="Campo de Ponta Porã"
                     className="w-full max-w-2xl h-auto rounded-lg shadow-lg"
                   />
+                </div>
+
+                {/* Seção Pastores do Campo de Ponta Porã */}
+                <div className="text-center mb-12">
+                  <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
+                    Pastores do Campo de Ponta Porã
+                  </h2>
+                  <div className="w-24 h-1 bg-yellow-500 mx-auto mb-8"></div>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+                    {pastorsCampoPontaPorã.map((pastor, index) => (
+                      <Card key={index} className="text-center hover:shadow-lg transition-shadow overflow-hidden">
+                        <CardContent className="p-6">
+                          {/* Imagem com proporção correta */}
+                          <div className="w-32 h-32 mx-auto mb-4 overflow-hidden rounded-lg">
+                            <img 
+                              src={pastor.image} 
+                              alt={pastor.title}
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                          <h3 className="text-lg font-bold text-blue-900 mb-3">
+                            {pastor.title}
+                          </h3>
+                          <div className="space-y-1">
+                            {pastor.names.map((name, nameIndex) => (
+                              <p key={nameIndex} className="text-sm text-gray-700 font-medium">
+                                {name}
+                              </p>
+                            ))}
+                          </div>
+                        </CardContent>
+                      </Card>
+                    ))}
+                  </div>
                 </div>
               </div>
 
@@ -167,7 +212,7 @@ const AboutPage = () => {
                 </p>
               </div>
 
-              {/* Seção Nossos Presidentes - REFEITA */}
+              {/* Seção Nossos Presidentes */}
               <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
                   Nossos Presidentes
