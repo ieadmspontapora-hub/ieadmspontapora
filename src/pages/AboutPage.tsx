@@ -280,7 +280,7 @@ const AboutPage = () => {
           </div>
         </section>
 
-        {/* Seção de Marcos Históricos */}
+        {/* Seção de Marcos Históricos e Valores Fundamentais */}
         <section className="py-16 px-4 relative" style={{ 
           backgroundImage: "url('/images/img-backgroundpapel.png')",
           backgroundSize: 'cover',
@@ -290,6 +290,7 @@ const AboutPage = () => {
           <div className="absolute inset-0 bg-white bg-opacity-80"></div>
           <div className="relative z-10">
             <div className="max-w-6xl mx-auto">
+              {/* Seção de Marcos Históricos */}
               <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
                   Marcos Históricos
@@ -299,7 +300,7 @@ const AboutPage = () => {
                 </p>
               </div>
 
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
                 {milestones.map((milestone, index) => (
                   <Card key={index} className="text-center hover:shadow-lg transition-shadow">
                     <CardContent className="p-6">
@@ -319,20 +320,8 @@ const AboutPage = () => {
                   </Card>
                 ))}
               </div>
-            </div>
-          </div>
-        </section>
 
-        {/* Seção Valores */}
-        <section className="py-16 px-4 relative" style={{ 
-          backgroundImage: "url('/images/img-backgroundpapel.png')",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
-        }}>
-          <div className="absolute inset-0 bg-white bg-opacity-80"></div>
-          <div className="relative z-10">
-            <div className="max-w-6xl mx-auto">
+              {/* Seção Valores */}
               <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
                   Nossos Valores Fundamentais
