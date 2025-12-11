@@ -167,30 +167,30 @@ const AboutPage = () => {
                 </p>
               </div>
 
-              {/* Seção Nossos Presidentes */}
+              {/* Seção Nossos Presidentes - REFEITA */}
               <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
                   Nossos Presidentes
                 </h2>
                 <div className="w-24 h-1 bg-yellow-500 mx-auto mb-8"></div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
                   {presidents.map((president, index) => (
-                    <Card key={index} className="text-center hover:shadow-lg transition-shadow p-8 min-h-[400px]">
-                      <CardContent className="p-0">
-                        {/* Espaço para imagem - formato quadrado */}
-                        <div className="w-48 h-48 mx-auto mb-6">
+                    <Card key={index} className="text-center hover:shadow-lg transition-shadow overflow-hidden">
+                      <CardContent className="p-6">
+                        {/* Imagem com proporção correta */}
+                        <div className="w-32 h-32 mx-auto mb-4 overflow-hidden rounded-lg">
                           <img 
                             src={president.image} 
                             alt={president.title}
-                            className="w-full h-full object-cover rounded-lg shadow-lg"
+                            className="w-full h-full object-cover"
                           />
                         </div>
-                        <h3 className="text-xl font-bold text-blue-900 mb-4">
+                        <h3 className="text-lg font-bold text-blue-900 mb-3">
                           {president.title}
                         </h3>
-                        <div className="space-y-2">
+                        <div className="space-y-1">
                           {president.names.map((name, nameIndex) => (
-                            <p key={nameIndex} className="text-gray-700 font-medium whitespace-nowrap">
+                            <p key={nameIndex} className="text-sm text-gray-700 font-medium">
                               {name}
                             </p>
                           ))}
