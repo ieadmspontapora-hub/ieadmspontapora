@@ -75,7 +75,7 @@ const AboutPage = () => {
                 <div className="w-24 h-1 bg-yellow-500 mx-auto mb-6"></div>
                 <div className="flex justify-center mb-8">
                   <img 
-                    src="/images/igreja pp.jpg" 
+                    src="/images/fachada_01-550.jpg" 
                     alt="Campo de Ponta Porã"
                     className="w-full max-w-2xl h-auto rounded-lg shadow-lg"
                   />
@@ -102,7 +102,7 @@ const AboutPage = () => {
                 </div>
                 <div className="flex justify-center">
                   <img 
-                    src="/images/igreja pp.jpg" 
+                    src="/images/fachada_01-550.jpg" 
                     alt="Igreja IEADMS"
                     className="w-full max-w-md h-auto rounded-lg shadow-lg"
                   />
