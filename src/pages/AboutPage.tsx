@@ -174,8 +174,12 @@ const AboutPage = () => {
                     <Card key={index} className="text-center hover:shadow-lg transition-shadow">
                       <CardContent className="p-6">
                         {/* Espaço para imagem - 1024x925 */}
-                        <div className="w-full h-96 bg-gray-200 rounded-lg mb-6 flex items-center justify-center">
-                          <span className="text-gray-500">Imagem {index + 1}</span>
+                        <div className="w-full h-96 flex items-center justify-center mb-6">
+                          <img 
+                            src={`/images/img pr alencar.jpg`} 
+                            alt={president.title}
+                            className="w-full h-full object-cover rounded-lg shadow-lg"
+                          />
                         </div>
                         <h3 className="text-xl font-bold text-blue-900 mb-4">
                           {president.title}
