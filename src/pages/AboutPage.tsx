@@ -112,7 +112,7 @@ const AboutPage = () => {
       <main className="flex-grow">
         {/* Seção Hero com título */}
         <section className="relative py-20 px-4 bg-cover bg-center bg-no-repeat" 
-                 style={{ backgroundImage: "url('/images/img HeaderSobre')" }}>
+                 style={{ backgroundImage: "url('/images/img HeaderSobre.png')" }}>
           <div className="absolute inset-0 bg-black opacity-30"></div>
           <div className="relative z-10 max-w-6xl mx-auto text-center">
             <div className="mb-8">
@@ -147,7 +147,7 @@ const AboutPage = () => {
                 <div className="flex justify-center mb-8">
                   <img 
                     src="/images/igreja pp.jpg" 
-                    de="Campo de Ponta Porã"
+                    alt="Campo de Ponta Porã"
                     className="w-full max-w-2xl h-auto rounded-lg shadow-lg"
                   />
                 </div>
