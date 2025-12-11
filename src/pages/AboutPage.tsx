@@ -110,15 +110,10 @@ const AboutPage = () => {
       <Header />
       
       <main className="flex-grow">
-        {/* Seção Hero com título */}
-        <section className="relative py-20 px-4 bg-cover bg-center bg-no-repeat" 
+        {/* Seção Hero com imagem de fundo */}
+        <section className="relative h-[50vh] md:h-[60vh] bg-cover bg-center bg-no-repeat" 
                  style={{ backgroundImage: "url('/images/img HeaderSobre.png')" }}>
           <div className="absolute inset-0 bg-black opacity-30"></div>
-          <div className="relative z-10 max-w-6xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              Nossa História
-            </h1>
-          </div>
         </section>
 
         {/* Seção História Principal */}
