@@ -33,7 +33,7 @@ export const PrayerRequestCard = () => {
   });
 
   const onSubmit = async (data: PrayerRequestFormData) => {
-    const result = await submitPrayerRequest(data as any);
+    const result = await submitPrayerRequest(data);
     
     if (result.success) {
       toast({
