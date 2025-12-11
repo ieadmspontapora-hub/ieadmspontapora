@@ -115,22 +115,9 @@ const AboutPage = () => {
                  style={{ backgroundImage: "url('/images/img HeaderSobre.png')" }}>
           <div className="absolute inset-0 bg-black opacity-30"></div>
           <div className="relative z-10 max-w-6xl mx-auto text-center">
-            <div className="mb-8">
-              <Button 
-                onClick={() => navigate('/')}
-                variant="outline"
-                className="mb-6 border-white text-white hover:bg-white hover:text-blue-900"
-              >
-                <ArrowLeft className="mr-2" size={16} />
-                Voltar para o início
-              </Button>
-            </div>
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
               Nossa História
             </h1>
-            <p className="text-xl md:text-2xl text-blue-100 max-w-3xl mx-auto">
-              Cinco décadas de fé, amor e transformação
-            </p>
           </div>
         </section>
 
@@ -140,6 +127,16 @@ const AboutPage = () => {
             <div className="prose prose-lg max-w-none">
               {/* Seção Campo de Ponta Porã */}
               <div className="text-center mb-12">
+                <div className="mb-8">
+                  <Button 
+                    onClick={() => navigate('/')}
+                    variant="outline"
+                    className="mb-6 border-white text-white hover:bg-white hover:text-blue-900"
+                  >
+                    <ArrowLeft className="mr-2" size={16} />
+                    Voltar para o início
+                  </Button>
+                </div>
                 <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
                   Campo de Ponta Porã
                 </h2>
