@@ -35,6 +35,37 @@ const AboutPage = () => {
     }
   ];
 
+  const presidents = [
+    {
+      title: "Presidentes do Ministério",
+      names: [
+        "Pr. Eliel Araújo de Alencar",
+        "Pra. Jane C. M. de Alencar"
+      ]
+    },
+    {
+      title: "Presidentes Executivos",
+      names: [
+        "Pr. Felipe Augusto C. M. Alencar",
+        "Pra. Hyanna Zanin de Alencar"
+      ]
+    },
+    {
+      title: "1º Vice-Presidentes",
+      names: [
+        "Pr. Elias Araújo de Alencar",
+        "Pra. Ana Lúcia Alencar"
+      ]
+    },
+    {
+      title: "2º Vice-Presidentes",
+      names: [
+        "Pr. Jorcelino Pereira Nantes",
+        "Pra. Magaly Nantes"
+      ]
+    }
+  ];
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -130,6 +161,36 @@ const AboutPage = () => {
                 <p className="text-lg leading-relaxed text-gray-700">
                   Por isso, esta igreja, além de incentivar a leitura da palavra de Deus, a oração e a evangelização, busca também dar oportunidade a tantos quantos queiram vir serrar fileiras neste exército de milhares de fiéis que, por cinco décadas, faz parte desta igreja vitoriosa, dando provas cabais de que a promessa de Cristo à igreja é real ao dizer que as <span className="font-bold text-blue-900">PORTAS DO INFERNO NÃO PREVALECERIAM CONTRA ELA</span>.
                 </p>
+              </div>
+
+              {/* Seção Nossos Presidentes */}
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
+                  Nossos Presidentes
+                </h2>
+                <div className="w-24 h-1 bg-yellow-500 mx-auto mb-8"></div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+                  {presidents.map((president, index) => (
+                    <Card key={index} className="text-center hover:shadow-lg transition-shadow">
+                      <CardContent className="p-6">
+                        {/* Espaço para imagem - 1024x925 */}
+                        <div className="w-full h-96 bg-gray-200 rounded-lg mb-6 flex items-center justify-center">
+                          <span className="text-gray-500">Imagem {index + 1}</span>
+                        </div>
+                        <h3 className="text-xl font-bold text-blue-900 mb-4">
+                          {president.title}
+                        </h3>
+                        <div className="space-y-2">
+                          {president.names.map((name, nameIndex) => (
+                            <p key={nameIndex} className="text-gray-700 font-medium">
+                              {name}
+                            </p>
+                          ))}
+                        </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
               </div>
               
               {/* Seção com Vídeo e Mensagem */}
