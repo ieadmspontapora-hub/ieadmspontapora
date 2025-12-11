@@ -72,12 +72,36 @@ const AboutPage = () => {
 
   const pastorsCampoPontaPorã = [
     {
-      title: "Pastores do Campo de Ponta Porã",
+      title: "Pastor da Sede",
       names: [
-        "Pr. Eliseu Feitosa de Alencar",
-        "Pra. Dulcila Araújo de Alencar"
+        "Pr. Silvio Cardoso",
+        "Pra. Delma Gomides de Oliveira"
       ],
-      image: "/images/fundadores2.jpg"
+      image: "/images/img PrSilvio.png"
+    },
+    {
+      title: "Pastor da Congregação Vista Alegre",
+      names: [
+        "Pr. Lucas Dutra",
+        "Pra. Katsimone Miranda"
+      ],
+      image: "/images/img PrLucas.jpg"
+    },
+    {
+      title: "Pastor da Congregação Primor",
+      names: [
+        "Pr. Jackes Wesley",
+        "Pra. Solange Dutra"
+      ],
+      image: "/images/img PrWesley.jpg"
+    },
+    {
+      title: "Pastor da Congregação Marambaia",
+      names: [
+        "Pr. Paulo Portela",
+        "Pra. Magaly Adrigues"
+      ],
+      image: "/images/img PrPaulo.jpg"
     }
   ];
 
