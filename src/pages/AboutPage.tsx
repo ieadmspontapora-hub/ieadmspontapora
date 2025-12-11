@@ -67,6 +67,22 @@ const AboutPage = () => {
         <section className="py-16 px-4 bg-white">
           <div className="max-w-4xl mx-auto">
             <div className="prose prose-lg max-w-none">
+              {/* Seção Campo de Ponta Porã */}
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
+                  Campo de Ponta Porã
+                </h2>
+                <div className="w-24 h-1 bg-yellow-500 mx-auto mb-6"></div>
+                <div className="flex justify-center mb-8">
+                  <img 
+                    src="/images/igreja pp.jpg" 
+                    alt="Campo de Ponta Porã"
+                    className="w-full max-w-2xl h-auto rounded-lg shadow-lg"
+                  />
+                </div>
+              </div>
+
+              {/* Seção A Origem da IEADMS */}
               <div className="text-center mb-12">
                 <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
                   A Origem da IEADMS
@@ -86,7 +102,7 @@ const AboutPage = () => {
                 </div>
                 <div className="flex justify-center">
                   <img 
-                    src="/images/fachada_01-550.jpg" 
+                    src="/images/igreja pp.jpg" 
                     alt="Igreja IEADMS"
                     className="w-full max-w-md h-auto rounded-lg shadow-lg"
                   />
