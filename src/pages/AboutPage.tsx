@@ -2,10 +2,10 @@ import { Card, CardContent } from '@/components/ui/card';
 
 const AboutPage = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       {/* Seção História Principal */}
       <section 
-        className="py-16 px-4 relative"
+        className="py-16 px-4 relative bg-cover bg-center"
         style={{
           backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('/images/background Papel.png')`,
           backgroundSize: 'cover',

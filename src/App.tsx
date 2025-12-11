@@ -6,14 +6,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import AboutPage from "./pages/AboutPage";
 import NotFound from "./pages/NotFound";
-import BackgroundImage from "./components/BackgroundImage";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <BackgroundImage />
       <Toaster />
       <Sonner />
       <BrowserRouter>
