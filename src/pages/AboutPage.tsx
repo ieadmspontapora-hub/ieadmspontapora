@@ -116,7 +116,7 @@ const AboutPage = () => {
           <div className="absolute inset-0 bg-black opacity-30"></div>
           <div className="relative z-10 max-w-6xl mx-auto text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-6">
-             
+              Nossa História
             </h1>
           </div>
         </section>
