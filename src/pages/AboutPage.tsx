@@ -253,7 +253,6 @@ const AboutPage = () => {
                               src={president.image} 
                               alt={president.title}
                               className="w-full h-full object-cover"
-                              className="w-full h-full object-cover"
                             />
                           </div>
                           <h3 className="text-lg font-bold text-blue-900 mb-3">
