@@ -175,7 +175,7 @@ const AboutPage = () => {
                 <div className="w-24 h-1 bg-yellow-500 mx-auto mb-8"></div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
                   {presidents.map((president, index) => (
-                    <Card key={index} className="text-center hover:shadow-lg transition-shadow p-6">
+                    <Card key={index} className="text-center hover:shadow-lg transition-shadow p-8 min-h-[400px]">
                       <CardContent className="p-0">
                         {/* Espaço para imagem - formato quadrado */}
                         <div className="w-48 h-48 mx-auto mb-6">
@@ -190,7 +190,7 @@ const AboutPage = () => {
                         </h3>
                         <div className="space-y-2">
                           {president.names.map((name, nameIndex) => (
-                            <p key={nameIndex} className="text-gray-700 font-medium">
+                            <p key={nameIndex} className="text-gray-700 font-medium whitespace-nowrap">
                               {name}
                             </p>
                           ))}
