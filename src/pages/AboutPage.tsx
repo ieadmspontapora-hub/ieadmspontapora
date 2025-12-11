@@ -281,86 +281,102 @@ const AboutPage = () => {
         </section>
 
         {/* Seção de Marcos Históricos */}
-        <section className="py-16 px-4 bg-gray-50">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
-                Marcos Históricos
-              </h2>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                Principais momentos que marcaram nossa trajetória
-              </p>
-            </div>
+        <section className="py-16 px-4 relative" style={{ 
+          backgroundImage: "url('/images/img-backgroundpapel.png')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}>
+          <div className="absolute inset-0 bg-white bg-opacity-80"></div>
+          <div className="relative z-10">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
+                  Marcos Históricos
+                </h2>
+                <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                  Principais momentos que marcaram nossa trajetória
+                </p>
+              </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {milestones.map((milestone, index) => (
-                <Card key={index} className="text-center hover:shadow-lg transition-shadow">
-                  <CardContent className="p-6">
-                    <div className="flex justify-center mb-4">
-                      {milestone.icon}
-                    </div>
-                    <div className="text-2xl font-bold text-blue-900 mb-2">
-                      {milestone.year}
-                    </div>
-                    <h3 className="text-lg font-semibold text-gray-800 mb-3">
-                      {milestone.event}
-                    </h3>
-                    <p className="text-gray-600 text-sm">
-                      {milestone.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              ))}
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                {milestones.map((milestone, index) => (
+                  <Card key={index} className="text-center hover:shadow-lg transition-shadow">
+                    <CardContent className="p-6">
+                      <div className="flex justify-center mb-4">
+                        {milestone.icon}
+                      </div>
+                      <div className="text-2xl font-bold text-blue-900 mb-2">
+                        {milestone.year}
+                      </div>
+                      <h3 className="text-lg font-semibold text-gray-800 mb-3">
+                        {milestone.event}
+                      </h3>
+                      <p className="text-gray-600 text-sm">
+                        {milestone.description}
+                      </p>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
             </div>
           </div>
         </section>
 
         {/* Seção Valores */}
-        <section className="py-16 px-4 bg-white">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
-                Nossos Valores Fundamentais
-              </h2>
-              <div className="w-24 h-1 bg-yellow-500 mx-auto mb-6"></div>
-            </div>
+        <section className="py-16 px-4 relative" style={{ 
+          backgroundImage: "url('/images/img-backgroundpapel.png')",
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}>
+          <div className="absolute inset-0 bg-white bg-opacity-80"></div>
+          <div className="relative z-10">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
+                  Nossos Valores Fundamentais
+                </h2>
+                <div className="w-24 h-1 bg-yellow-500 mx-auto mb-6"></div>
+              </div>
 
-            <div className="grid md:grid-cols-3 gap-8">
-              <Card className="text-center">
-                <CardContent className="p-6">
-                  <div className="w-16 h-16 bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Heart className="text-white" size={24} />
-                  </div>
-                  <h3 className="text-xl font-bold text-blue-900 mb-3">Amor a Deus</h3>
-                  <p className="text-gray-600">
-                    Buscamos amar a Deus de todo o coração, com toda a nossa alma e com toda a nossa mente.
-                  </p>
-                </CardContent>
-              </Card>
+              <div className="grid md:grid-cols-3 gap-8">
+                <Card className="text-center">
+                  <CardContent className="p-6">
+                    <div className="w-16 h-16 bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Heart className="text-white" size={24} />
+                    </div>
+                    <h3 className="text-xl font-bold text-blue-900 mb-3">Amor a Deus</h3>
+                    <p className="text-gray-600">
+                      Buscamos amar a Deus de todo o coração, com toda a nossa alma e com toda a nossa mente.
+                    </p>
+                  </CardContent>
+                </Card>
 
-              <Card className="text-center">
-                <CardContent className="p-6">
-                  <div className="w-16 h-16 bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Users className="text-white" size={24} />
-                  </div>
-                  <h3 className="text-xl font-bold text-blue-900 mb-3">Unidade</h3>
-                  <p className="text-gray-600">
-                    Valorizamos a unidade do corpo de Cristo e a comunhão entre os irmãos.
-                  </p>
-                </CardContent>
-              </Card>
+                <Card className="text-center">
+                  <CardContent className="p-6">
+                    <div className="w-16 h-16 bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Users className="text-white" size={24} />
+                    </div>
+                    <h3 className="text-xl font-bold text-blue-900 mb-3">Unidade</h3>
+                    <p className="text-gray-600">
+                      Valorizamos a unidade do corpo de Cristo e a comunhão entre os irmãos.
+                    </p>
+                  </CardContent>
+                </Card>
 
-              <Card className="text-center">
-                <CardContent className="p-6">
-                  <div className="w-16 h-16 bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Award className="text-white" size={24} />
-                  </div>
-                  <h3 className="text-xl font-bold text-blue-900 mb-3">Excelência</h3>
-                  <p className="text-gray-600">
-                    Oferecemos o melhor de nós mesmos em tudo o que fazemos, para glória de Deus.
-                  </p>
-                </CardContent>
-              </Card>
+                <Card className="text-center">
+                  <CardContent className="p-6">
+                    <div className="w-16 h-16 bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <Award className="text-white" size={24} />
+                    </div>
+                    <h3 className="text-xl font-bold text-blue-900 mb-3">Excelência</h3>
+                    <p className="text-gray-600">
+                      Oferecemos o melhor de nós mesmos em tudo o que fazemos, para glória de Deus.
+                    </p>
+                  </CardContent>
+                </Card>
+              </div>
             </div>
           </div>
         </section>
