@@ -115,7 +115,9 @@ const AboutPage = () => {
                  style={{ backgroundImage: "url('/images/img HeaderSobre.png')" }}>
           <div className="absolute inset-0 bg-black opacity-30"></div>
           <div className="relative z-10 max-w-6xl mx-auto text-center">
-           
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">
+             
+            </h1>
           </div>
         </section>
 
