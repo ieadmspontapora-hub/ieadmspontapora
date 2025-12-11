@@ -110,9 +110,15 @@ const AboutPage = () => {
       <Header />
       
       <main className="flex-grow">
-        {/* Seção Hero com imagem de fundo */}
-        <section className="relative h-[50vh] md:h-[60vh] bg-cover bg-center bg-no-repeat" 
+        {/* Seção Hero com imagem de fundo - Desktop */}
+        <section className="relative h-[50vh] md:h-[60vh] bg-cover bg-center bg-no-repeat hidden md:block" 
                  style={{ backgroundImage: "url('/images/img HeaderSobre.png')" }}>
+          <div className="absolute inset-0 bg-black opacity-30"></div>
+        </section>
+
+        {/* Seção Hero com imagem de fundo - Mobile */}
+        <section className="relative h-[50vh] md:h-[60vh] bg-cover bg-center bg-no-repeat md:hidden" 
+                 style={{ backgroundImage: "url('/images/Img HeaderSobreCell.png')" }}>
           <div className="absolute inset-0 bg-black opacity-30"></div>
         </section>
 
