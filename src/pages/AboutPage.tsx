@@ -122,13 +122,8 @@ const AboutPage = () => {
           <div className="absolute inset-0 bg-black opacity-30"></div>
         </section>
 
-        {/* Seção História Principal com background de papel amassado */}
-        <section className="py-16 px-4 relative" style={{ 
-          backgroundImage: "url('/images/img-backgroundpapel.png')",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
-        }}>
+        {/* Seção História Principal com background de papel amassado - Mobile e Desktop diferentes */}
+        <section className="py-16 px-4 relative bg-[url('/images/img-backgroundPapelCell.png')] md:bg-[url('/images/img-backgroundpapel.png')] bg-cover bg-center bg-no-repeat">
           <div className="absolute inset-0 bg-white bg-opacity-80"></div>
           <div className="relative z-10">
             <div className="max-w-4xl mx-auto">
@@ -280,13 +275,8 @@ const AboutPage = () => {
           </div>
         </section>
 
-        {/* Seção de Marcos Históricos e Valores Fundamentais */}
-        <section className="py-16 px-4 relative" style={{ 
-          backgroundImage: "url('/images/img-backgroundpapel.png')",
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
-        }}>
+        {/* Seção de Marcos Históricos e Valores Fundamentais - Mobile e Desktop diferentes */}
+        <section className="py-16 px-4 relative bg-[url('/images/img-backgroundPapelCell.png')] md:bg-[url('/images/img-backgroundpapel.png')] bg-cover bg-center bg-no-repeat">
           <div className="absolute inset-0 bg-white bg-opacity-80"></div>
           <div className="relative z-10">
             <div className="max-w-6xl mx-auto">
