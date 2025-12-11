@@ -255,7 +255,7 @@ const AboutPage = () => {
                           {/* Imagem com proporção correta */}
                           <div className="w-32 h-32 mx-auto mb-4 overflow-hidden rounded-lg">
                             <img 
-                              src={president.image} 
+                              src={presor.image} 
                               alt={president.title}
                               className="w-full h-full object-cover"
                             />
