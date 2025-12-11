@@ -123,7 +123,16 @@ const AboutPage = () => {
         </section>
 
         {/* Seção História Principal */}
-        <section className="py-16 px-4 bg-white">
+        <section 
+          className="py-16 px-4 relative"
+          style={{
+            backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('/images/background Papel/background Papel.png')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundAttachment: 'fixed',
+            backgroundRepeat: 'no-repeat'
+          }}
+        >
           <div className="max-w-4xl mx-auto">
             <div className="prose prose-lg max-w-none">
               {/* Seção Campo de Ponta Porã */}
