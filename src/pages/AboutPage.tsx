@@ -82,8 +82,8 @@ const AboutPage = () => {
     {
       title: "Pastor da Congregação Vista Alegre",
       names: [
-        "Pr. Lucas Dutra",
-        "Pra. Katsimone Miranda"
+        "Pb. Lucas Dutra",
+        "Diac. Katsimone Miranda"
       ],
       image: "/images/img PrLucas.jpg"
     },
@@ -91,7 +91,7 @@ const AboutPage = () => {
       title: "Pastor da Congregação Primor",
       names: [
         "Pr. Jackes Wesley",
-        "Pra. Solange Dutra"
+        "Miss. Solange Dutra"
       ],
       image: "/images/img PrWesley.jpg"
     },
@@ -99,7 +99,7 @@ const AboutPage = () => {
       title: "Pastor da Congregação Marambaia",
       names: [
         "Pr. Paulo Portela",
-        "Pra. Magaly Adrigues"
+        "Miss. Magaly Adrigues"
       ],
       image: "/images/img PrPaulo.jpg"
     }
