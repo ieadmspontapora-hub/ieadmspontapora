@@ -134,7 +134,7 @@ const AboutPage = () => {
                     <Button 
                       onClick={() => navigate('/')}
                       variant="outline"
-                      className="mb-6 border-white text-white hover:bg-white hover:text-blue-900"
+                      className="bg-gradient-to-r from-blue-900 to-blue-700 text-white shadow-md z-50"
                     >
                       <ArrowLeft className="mr-2" size={16} />
                       Voltar para o início
@@ -148,7 +148,7 @@ const AboutPage = () => {
                     <img 
                       src="/images/igreja pp.jpg" 
                       alt="Campo de Ponta Porã"
-                      className="w-full max-w-2xl h-auto rounded-lg shadow-lg"
+                      className="w-full max-w-2xl h-auto rounded-lg shadow-2xl border-4 border-white shadow-[0_8px_16px_rgba(0,0,0,0.65)] hover:shadow-[0_12px_24px_rgba(0,0,0,0.4)] transition-shadow duration-300"
                     />
                   </div>
 
@@ -209,7 +209,7 @@ const AboutPage = () => {
                     <img 
                       src="/images/fachada_01-550.jpg" 
                       alt="Igreja IEADMS"
-                      className="w-full max-w-md h-auto rounded-lg shadow-lg"
+                      className="w-full max-w-md h-auto rounded-lg shadow-2xl border-4 border-white shadow-[0_8px_16px_rgba(0,0,0,0.65)] hover:shadow-[0_12px_24px_rgba(0,0,0,0.4)] transition-shadow duration-300"
                     />
                   </div>
                 </div>
@@ -220,7 +220,7 @@ const AboutPage = () => {
                     <img 
                       src="/images/fundadores2.jpg" 
                       alt="Fundadores da IEADMS"
-                      className="w-[250px] h-[186px] object-cover rounded-lg shadow-lg"
+                      className="w-[250px] h-[186px] object-cover rounded-lg shadow-2xl border-4 border-white shadow-[0_8px_16px_rgba(0,0,0,0.65)] hover:shadow-[0_12px_24px_rgba(0,0,0,0.4)] transition-shadow duration-300"
                     />
                   </div>
                   <div className="flex-1">
