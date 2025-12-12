@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
 const Header = () => {
@@ -9,65 +10,68 @@ const Header = () => {
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
+    setIsMenuOpen(false);
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/10 backdrop-blur-md border-b border-white/10">
+    <header className="fixed top-0 w-full bg-gradient-to-r from-blue-900 to-blue-700 text-white shadow-md z-50">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <img 
-              src="/images/img-Logo-IEADMS.png" 
-              alt="IEADMS" 
-              className="h-10 w-auto"
-            />
+            <Link to="/" className="flex items-center">
+              <img 
+                src="/images/img-Logo-IEADMS.png" 
+                alt="IEADMS Logo"
+                className="h-10 w-auto object-contain"
+              />
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-4">
+          <nav className="hidden md:flex space-x-8">
+            <button 
+              onClick={() => scrollToSection('hero')}
+              className="text-white hover:text-blue-200 transition-colors"
+            >
+              Início
+            </button>
             <button 
               onClick={() => scrollToSection('about')}
-              className="text-white/90 text-left px-3 py-2 rounded-lg hover:bg-white/10 hover:text-white transition-all hover:scale-105"
+              className="text-white hover:text-blue-200 transition-colors"
             >
               Sobre
             </button>
             <button 
               onClick={() => scrollToSection('leadership')}
-              className="text-white/90 text-left px-3 py-2 rounded-lg hover:bg-white/10 hover:text-white transition-all hover:scale-105"
+              className="text-white hover:text-blue-200 transition-colors"
             >
               Liderança
             </button>
             <button 
               onClick={() => scrollToSection('worship')}
-              className="text-white/90 text-left px-3 py-2 rounded-lg hover:bg-white/10 hover:text-white transition-all hover:scale-105"
+              className="text-white hover:text-blue-200 transition-colors"
             >
               Cultos
             </button>
             <button 
               onClick={() => scrollToSection('events')}
-              className="text-white/90 text-left px-3 py-2 rounded-lg hover:bg-white/10 hover:text-white transition-all hover:scale-105"
+              className="text-white hover:text-blue-200 transition-colors"
             >
               Eventos
             </button>
             <button 
               onClick={() => scrollToSection('contact')}
-              className="text-white/90 text-left px-3 py-2 rounded-lg hover:bg-white/10 hover:text-white transition-all hover:scale-105"
+              className="text-white hover:text-blue-200 transition-colors"
             >
               Contato
-            </button>
-            <button 
-              onClick={() => window.location.href = '/sobre'}
-              className="text-white/90 text-left px-3 py-2 rounded-lg hover:bg-white/10 hover:text-white transition-all hover:scale-105"
-            >
-              Conhecer nossa história
             </button>
           </nav>
 
           {/* Mobile Menu Button */}
-          <button 
+          <button
+            className="md:hidden text-white"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden text-white p-2 rounded-lg hover:bg-white/10 transition-all duration-200"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -75,43 +79,45 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="md:hidden py-4 mt-2 mb-6 border-t border-white/10 bg-white/10 backdrop-blur-md rounded-2xl shadow-[0_8px_24px_rgba(0,0,0,0.35)] animate-slideDown">
-            <button 
-              onClick={() => window.location.href = '/sobre'}
-              className="text-white/90 text-left px-3 py-2 rounded-lg hover:bg-white/10 hover:text-white transition-all hover:translate-x-1"
-            >
-              Sobre
-            </button>
-            <button 
-              onClick={() => scrollToSection('leadership')}
-              className="text-white/90 text-left px-3 py-2 rounded-lg hover:bg-white/10 hover:text-white transition-all hover:translate-x-1"
-            >
-              Liderança
-            </button>
-            <button 
-              onClick={() => scrollToSection('worship')}
-              className="text-white/90 text-left px-3 py-2 rounded-lg hover:bg-white/10 hover:text-white transition-all hover:translate-x-1"
-            >
-              Cultos
-            </button>
-            <button 
-              onClick={() => scrollToSection('events')}
-              className="text-white/90 text-left px-3 py-2 rounded-lg hover:bg-white/10 hover:text-white transition-all hover:translate-x-1"
-            >
-              Eventos
-            </button>
-            <button 
-              onClick={() => scrollToSection('contact')}
-              className="text-white/90 text-left px-3 py-2 rounded-lg hover:bg-white/10 hover:text-white transition-all hover:translate-x-1"
-            >
-              Contato
-            </button>
-            <button 
-              onClick={() => window.location.href = '/sobre'}
-              className="text-white/90 text-left px-3 py-2 rounded-lg hover:bg-white/10 hover:text-white transition-all hover:translate-x-1"
-            >
-              Conhecer nossa história
-            </button>
+          <nav className="md:hidden py-4 border-t border-blue-600">
+            <div className="flex flex-col space-y-4">
+              <button 
+                onClick={() => scrollToSection('hero')}
+                className="text-white hover:text-blue-200 transition-colors"
+              >
+                Início
+              </button>
+              <button 
+                onClick={() => scrollToSection('about')}
+                className="text-white hover:text-blue-200 transition-colors"
+              >
+                Sobre
+              </button>
+              <button 
+                onClick={() => scrollToSection('leadership')}
+                className="text-white hover:text-blue-200 transition-colors"
+              >
+                Liderança
+              </button>
+              <button 
+                onClick={() => scrollToSection('worship')}
+                className="text-white hover:text-blue-200 transition-colors"
+              >
+                Cultos
+              </button>
+              <button 
+                onClick={() => scrollToSection('events')}
+                className="text-white hover:text-blue-200 transition-colors"
+              >
+                Eventos
+              </button>
+              <button 
+                onClick={() => scrollToSection('contact')}
+                className="text-white hover:text-blue-200 transition-colors"
+              >
+                Contato
+              </button>
+            </div>
           </nav>
         )}
       </div>
