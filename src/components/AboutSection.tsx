@@ -2,7 +2,12 @@ import { Card, CardContent } from '@/components/ui/card';
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-20 bg-gray-50">
+    <section id="about" className="py-20 bg-cover bg-center bg-no-repeat"
+             style={{
+               backgroundImage: "url('/images/img-backgroundpapel.png')",
+               backgroundSize: 'cover',
+               backgroundPosition: 'center'
+             }}>
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
