@@ -33,7 +33,7 @@ const HeroSection = () => {
 
   return (
     <section id="hero" className="relative h-screen flex items-center justify-center bg-gradient-to-br from-blue-900 to-blue-700">
-      {/* Carrossel de Imagens - Desktop */}
+      {/* Carrossel de Imagens - Desktop e Mobile */}
       <div className="absolute inset-0 overflow-hidden">
         {carouselImages.map((image, index) => (
           <div
@@ -47,14 +47,6 @@ const HeroSection = () => {
           />
         ))}
       </div>
-
-      {/* Imagem de fundo específica para mobile - substitui o carrossel no mobile */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center md:hidden"
-        style={{
-          backgroundImage: "url('/images/Img HeaderSobreCell.png')"
-        }}
-      ></div>
 
       {/* Overlay */}
       <div className="absolute inset-0 bg-black opacity-40"></div>
@@ -85,7 +77,7 @@ const HeroSection = () => {
       </div>
 
       {/* Indicadores do carrossel (apenas desktop) */}
-      <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
+      <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10 hidden md:flex">
         {carouselImages.map((_, index) => (
           <button
             key={index}
