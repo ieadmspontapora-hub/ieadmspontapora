@@ -11,7 +11,12 @@ import ComunidadePage from "./ComunidadePage";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-cover bg-center bg-no-repeat"
+         style={{
+           backgroundImage: "url('/images/img-backgroundpapel.png')",
+           backgroundSize: 'cover',
+           backgroundPosition: 'center'
+         }}>
       <Header />
       <main>
         <HeroSection />
