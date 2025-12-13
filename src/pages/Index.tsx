@@ -14,11 +14,12 @@ const Index = () => {
       <Header />
       <main>
         <HeroSection />
+        <PrayerRequestCard />
         <AboutSection />
         <LeadershipSection />
         <WorshipSchedule />
         <EventsSection />
-        <PrayerRequestCard />
+        
         <ContactSection />
       </main>
       <Footer />
