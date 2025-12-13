@@ -16,9 +16,9 @@ const Index = () => {
         <HeroSection />
         <PrayerRequestCard />
         <AboutSection />
-        <LeadershipSection />
+        {/* <LeadershipSection /> */}
         <WorshipSchedule />
-        <EventsSection />
+        {/* <EventsSection /> */}
         
         <ContactSection />
       </main>
