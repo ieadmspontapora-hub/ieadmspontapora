@@ -84,36 +84,8 @@ export default function ComunidadePage() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        {/* Background de papel amassado */}
-        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-             style={{
-               backgroundImage: "url('/images/img-backgroundpapel.png')",
-               backgroundSize: 'cover',
-               backgroundPosition: 'center'
-             }}>
-          <div className="absolute inset-0 bg-black opacity-40"></div>
-        </div>
-        
-        <div className="relative z-10 text-center text-white px-4">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">
-            Nossa Comunidade
-          </h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-            Somos uma família de crentes dedicada a amar a Deus e ao próximo, 
-            transformando vidas através do poder do Evangelho.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold px-8 py-3 rounded-lg transition-colors">
-              Conheça Nossa História
-            </button>
-            <button className="bg-transparent border-2 border-white hover:bg-white hover:text-blue-900 text-white font-bold px-8 py-3 rounded-lg transition-colors">
-              Participe de Nossos Cultos
-            </button>
-          </div>
-        </div>
-      </section>
+    
+      
 
       {/* Seção Única com Tudo */}
       <section className="py-20 bg-cover bg-center bg-no-repeat"
