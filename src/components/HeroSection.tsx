@@ -32,14 +32,19 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="hero" className="relative h-screen flex items-center justify-center bg-gradient-to-br from-blue-900 to-blue-700">
+    <section className="relative h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat"
+             style={{
+               backgroundImage: "url('/images/img-backgroundpapel.png')",
+               backgroundSize: 'cover',
+               backgroundPosition: 'center'
+             }}>
       {/* Carrossel de Imagens - Desktop e Mobile */}
       <div className="absolute inset-0 overflow-hidden">
         {carouselImages.map((image, index) => (
           <div
             key={index}
             className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-in-out ${
-              index === currentImageIndex ? 'opacity-100' : 'opacity-0'
+              index === currentImageIndex ? 'opacity-30' : 'opacity-0'
             }`}
             style={{
               backgroundImage: `url('${image}')`
@@ -48,8 +53,8 @@ const HeroSection = () => {
         ))}
       </div>
 
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-black opacity-40"></div>
+      {/* Overlay para melhorar a legibilidade */}
+      <div className="absolute inset-0 bg-black bg-opacity-20"></div>
 
       {/* Content */}
       <div className="relative z-10 text-center text-white px-4">
