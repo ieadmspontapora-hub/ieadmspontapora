@@ -13,7 +13,7 @@ interface ContributionCardProps {
 
 export default function ContributionCard({
   title = "Contribua com a Obra do Senhor",
-  description = "Sua contribuição ajuda a manter a igreja, apoiar projetos sociais e expandir o Reino de Deus. Cada oferta é um ato de fé, amor e generosidade.",
+  description = "Sua contribuição é um ato voluntário, uma decisão de amor pela obra de Deus e pelas vidas que podem ser abençoadas por meio de nossas ações e projetos.",
   buttonText = "Contribuir Agora",
   buttonLink = "/contribuicao",
 }: ContributionCardProps) {
@@ -26,8 +26,7 @@ export default function ContributionCard({
             overflow-hidden
             rounded-3xl
             border border-black/10
-            bg-white/80
-            backdrop-blur-lg
+            bg-[#FFD700]
             shadow-[0_25px_50px_rgba(0,0,0,0.15)]
           "
         >
@@ -36,17 +35,17 @@ export default function ContributionCard({
 
               {/* TEXTO */}
               <div className="flex flex-col justify-center p-8 md:p-12">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-12 h-12 rounded-full bg-blue-900 flex items-center justify-center shadow-md">
-                    <HeartHandshake className="text-white" size={24} />
+                <div className="flex items-center gap-4 mb-5">
+                  <div className="w-14 h-14 rounded-full bg-blue-900 flex items-center justify-center shadow-md">
+                    <HeartHandshake className="text-white" size={26} />
                   </div>
 
-                  <h2 className="text-2xl md:text-3xl font-extrabold text-blue-900">
+                  <h2 className="text-2xl md:text-3xl font-semibold text-blue-900">
                     {title}
                   </h2>
                 </div>
 
-                <p className="text-gray-700 leading-relaxed mb-8 max-w-xl">
+                <p className="text-blue-900/90 leading-relaxed mb-10 max-w-xl">
                   {description}
                 </p>
 
@@ -54,12 +53,12 @@ export default function ContributionCard({
                   <Button
                     asChild
                     className="
-                      bg-yellow-500
-                      hover:bg-yellow-600
-                      text-blue-900
-                      font-bold
+                      bg-blue-900
+                      hover:bg-blue-800
+                      text-white
+                      font-semibold
                       rounded-xl
-                      px-8
+                      px-10
                       py-6
                       text-base
                       shadow-lg

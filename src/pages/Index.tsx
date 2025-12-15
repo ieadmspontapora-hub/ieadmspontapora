@@ -7,6 +7,7 @@ import EventsSection from "@/components/EventsSection";
 import PrayerRequestCard from "@/components/PrayerRequestCard";
 import ContactSection from "@/components/ContactSection";
 import ContributionCard from "@/components/ui/ContributionCard"
+import NossaIgrejaCard from "@/components/NossaIgrejaCard";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -20,6 +21,7 @@ const Index = () => {
       <Header />
       <main>
         <HeroSection />
+        <NossaIgrejaCard />
         <ContributionCard /> 
         <PrayerRequestCard />
         
