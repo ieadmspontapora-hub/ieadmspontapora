@@ -8,7 +8,7 @@ export default function NossaIgrejaCard() {
   const navigate = useNavigate();
 
   return (
-    <section className="py-20 bg-transparent">
+    <section className="py-16 md:py-20 bg-transparent">
       <div className="container mx-auto px-4">
 
         <Card
@@ -22,27 +22,30 @@ export default function NossaIgrejaCard() {
           "
         >
           <CardContent className="p-0">
-            <div className="grid lg:grid-cols-2 gap-10">
 
-              {/* IMAGEM */}
-              <div className="p-6">
-                <div className="h-full w-full overflow-hidden rounded-2xl shadow-lg">
-                  <img
-                    src="/images/igreja pp.jpg"
-                    alt="Nossa Igreja"
-                    className="w-full h-full object-cover"
-                    loading="lazy"
-                  />
-                </div>
+            {/* GRID */}
+            <div className="grid lg:grid-cols-2">
+
+              {/* IMAGEM (TOPO NO MOBILE) */}
+              <div className="relative h-56 sm:h-64 md:h-80 lg:h-auto">
+                <img
+                  src="/images/igreja pp.jpg"
+                  alt="Nossa Igreja"
+                  className="absolute inset-0 w-full h-full object-cover"
+                  loading="lazy"
+                />
+
+                {/* Overlay leve para legibilidade */}
+                <div className="absolute inset-0 bg-black/20 lg:hidden" />
               </div>
 
               {/* TEXTO */}
-              <div className="flex flex-col justify-center p-8 md:p-12">
-                <h2 className="text-3xl md:text-4xl font-semibold text-yellow-500 mb-6">
+              <div className="flex flex-col justify-center p-6 sm:p-8 md:p-12 text-center lg:text-left">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-yellow-500 mb-4">
                   Nossa Igreja
                 </h2>
 
-                <p className="text-blue-900 leading-relaxed text-base md:text-lg mb-10">
+                <p className="text-blue-900 leading-relaxed text-sm sm:text-base md:text-lg mb-8">
                   Voltada para o século XXI, e, nesta visão de futuro, propõe-se a
                   apresentar verdadeiramente Deus aqui na terra. Portanto, este site
                   apresenta ações com intuito de cumprir a ordem primordial de Cristo
@@ -55,28 +58,27 @@ export default function NossaIgrejaCard() {
                   CONTRA ELA.
                 </p>
 
-                <div>
-                  <Button
-                    onClick={() => navigate("/sobre")}
-                    className="
-                      bg-blue-900
-                      hover:bg-blue-800
-                      text-white
-                      rounded-full
-                      px-10
-                      py-6
-                      tracking-widest
-                      font-medium
-                      shadow-lg
-                      transition-all
-                      duration-300
-                      hover:scale-[1.05]
-                      active:scale-[0.97]
-                    "
-                  >
-                    CONHEÇA NOSSA HISTÓRIA
-                  </Button>
-                </div>
+                <Button
+                  onClick={() => navigate("/sobre")}
+                  className="
+                    bg-blue-900
+                    hover:bg-blue-800
+                    text-white
+                    rounded-full
+                    px-10
+                    py-6
+                    tracking-widest
+                    font-medium
+                    shadow-lg
+                    transition-all
+                    duration-300
+                    hover:scale-[1.05]
+                    active:scale-[0.97]
+                    w-full sm:w-auto
+                  "
+                >
+                  CONHEÇA NOSSA HISTÓRIA
+                </Button>
               </div>
 
             </div>

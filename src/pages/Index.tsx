@@ -12,27 +12,29 @@ import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-cover bg-center bg-no-repeat"
-         style={{
-           backgroundImage: "url('/images/img-backgroundPapelCell.png')",
-           backgroundSize: 'cover',
-           backgroundPosition: 'center'
-         }}>
-      <Header />
-      <main>
-        <HeroSection />
-        <NossaIgrejaCard />
-        <ContributionCard /> 
-        <PrayerRequestCard />
-        
-      
-      
-        
-       
-        
-        <ContactSection />
-      </main>
-      <Footer />
+    <div
+      className="min-h-screen bg-no-repeat relative"
+      style={{
+        backgroundImage: "url('/images/img-backgroundPapelCell.png')",
+        backgroundSize: "cover",
+        backgroundPosition: "center top", // reduz sensação de zoom
+        backgroundAttachment: "fixed",   // melhora percepção de qualidade
+      }}
+    >
+      {/* overlay suave para disfarçar pixelização */}
+      <div className="absolute inset-0 bg-white/30 backdrop-blur-[1px]" />
+
+      <div className="relative z-10">
+        <Header />
+        <main>
+          <HeroSection />
+          <NossaIgrejaCard />
+          <ContributionCard />
+          <PrayerRequestCard />
+          <ContactSection />
+        </main>
+        <Footer />
+      </div>
     </div>
   );
 };
