@@ -6,24 +6,28 @@ import WorshipSchedule from "@/components/WorshipSchedule";
 import EventsSection from "@/components/EventsSection";
 import PrayerRequestCard from "@/components/PrayerRequestCard";
 import ContactSection from "@/components/ContactSection";
+import ContributionCard from "@/components/ui/ContributionCard"
 import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-cover bg-center bg-no-repeat"
          style={{
-           backgroundImage: "url('/images/img-backgroundpapel.png')",
+           backgroundImage: "url('/images/img-backgroundPapelCell.png')",
            backgroundSize: 'cover',
            backgroundPosition: 'center'
          }}>
       <Header />
       <main>
         <HeroSection />
-        <AboutSection />
-        <LeadershipSection />
-        <WorshipSchedule />
-        <EventsSection />
+        <ContributionCard /> 
         <PrayerRequestCard />
+        
+      
+      
+        
+       
+        
         <ContactSection />
       </main>
       <Footer />
