@@ -15,10 +15,10 @@ const HeroSection = () => {
   ];
 
   const carouselImagesMobile = [
-    'https://res.cloudinary.com/dapypkcbb/image/upload/v1765834808/Peniel_1_dpkruo.png',
-    'https://res.cloudinary.com/dapypkcbb/image/upload/v1765831121/UMADEMATS_zfrsfo.png',
-    'https://res.cloudinary.com/dapypkcbb/image/upload/v1765833762/cifad_1_koeprq.png',
-    'https://res.cloudinary.com/dapypkcbb/image/upload/v1765834555/Aqui_Jesus_gutjxd.png',
+    'https://res.cloudinary.com/dapypkcbb/image/upload/v1765835587/Peniel_upscayl_5x_upscayl-standard-4x_jvp23g.png',
+    'https://res.cloudinary.com/dapypkcbb/image/upload/v1765836155/UMADEMATS_upscayl_5x_upscayl-standard-4x_jibdkd.png',
+    'https://res.cloudinary.com/dapypkcbb/image/upload/v1765836342/CIFAD_sta85v.png',
+    'https://res.cloudinary.com/dapypkcbb/image/upload/v1765835831/Aqui_Jesus_upscayl_5x_upscayl-standard-4x_vgqoic.png',
   ];
 
   const isMobile = window.innerWidth < 768;
