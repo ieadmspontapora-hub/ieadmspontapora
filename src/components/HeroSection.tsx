@@ -15,7 +15,7 @@ const HeroSection = () => {
   ];
 
   const carouselImagesMobile = [
-    'https://res.cloudinary.com/dapypkcbb/image/upload/v1765922318/Aqui_Jesus_1_afsrmw.png',
+    'https://res.cloudinary.com/dapypkcbb/image/upload/v1765923306/Aqui_Jesus_3__upscayl_5x_upscayl-standard-4x_wfoxmn.png',
     'https://res.cloudinary.com/dapypkcbb/image/upload/v1765835587/Peniel_upscayl_5x_upscayl-standard-4x_jvp23g.png',
     'https://res.cloudinary.com/dapypkcbb/image/upload/v1765836155/UMADEMATS_upscayl_5x_upscayl-standard-4x_jibdkd.png',
     'https://res.cloudinary.com/dapypkcbb/image/upload/v1765836342/CIFAD_sta85v.png',
