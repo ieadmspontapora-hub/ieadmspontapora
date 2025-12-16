@@ -5,19 +5,19 @@ const TEMPLATE_ID = 'template_w0j18yi'; // Novo template ID fornecido
 const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
 export interface ContactRequestData {
-  nomeCompleto: string;
-  celular: string;
+  name: string;
+  phone: string;
   email: string;
-  mensagem: string;
+  message: string;
 }
 
 export const sendContactRequestEmail = async (data: ContactRequestData) => {
   try {
     const templateParams = {
-      nomeCompleto: data.nomeCompleto,
-      celular: data.celular,
+      name: data.name,
+      phone: data.phone,
       email: data.email,
-      mensagem: data.mensagem,
+      message: data.message,
       dataEnvio: new Date().toLocaleString('pt-BR'),
     };
 
@@ -30,7 +30,7 @@ export const sendContactRequestEmail = async (data: ContactRequestData) => {
 
     return {
       success: true,
-      message: 'Mensagem enviada com sucesso!',
+      message: 'message enviada com sucesso!',
       response: response,
     };
   } catch (error) {

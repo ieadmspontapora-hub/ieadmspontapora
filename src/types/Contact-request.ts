@@ -1,8 +1,8 @@
 export interface ContactRequest {
   id: string;
-  nomeCompleto: string;
-  celular: string;
+  name: string;
+  phone: string;
   email: string;
-  mensagem: string;
+  message: string;
   dataEnvio: Date;
 }
