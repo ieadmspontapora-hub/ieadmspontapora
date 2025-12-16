@@ -9,6 +9,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { ArrowLeft } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { useContactRequest } from "@/hooks/useContactRequest";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -35,6 +36,7 @@ export default function ContactPage() {
   const { toast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
+  const { submitContactRequest, resetForm } = useContactRequest();
 
   const {
     register,
@@ -48,14 +50,32 @@ export default function ContactPage() {
   const onSubmit = async (data: ContactFormData) => {
     setIsLoading(true);
 
-    setTimeout(() => {
-      setIsLoading(false);
+    try {
+      const result = await submitContactRequest(data);
+      
+      if (result.success) {
+        toast({
+          title: "Sucesso!",
+          description: result.message,
+        });
+        reset();
+        resetForm();
+      } else {
+        toast({
+          title: "Erro",
+          description: result.message,
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
       toast({
-        title: "Mensagem enviada!",
-        description: "Entraremos em contato em breve.",
+        title: "Erro",
+        description: "Ocorreu um erro inesperado. Tente novamente.",
+        variant: "destructive",
       });
-      reset();
-    }, 2000);
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -91,7 +111,7 @@ export default function ContactPage() {
       <section
         className="relative py-16"
         style={{
-          backgroundImage: "url('/images/img-backgroundPapelCell.')",
+          backgroundImage: "url('/images/img-backgroundPapelCell.png')",
           backgroundRepeat: "repeat",
           backgroundSize: "600px",
           backgroundPosition: "center",

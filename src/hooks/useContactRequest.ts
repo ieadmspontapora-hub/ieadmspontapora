@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { sendContactRequestEmail } from '@/lib/emailjs-Contact';
 import { ContactRequestData } from '@/lib/emailjs-Contact';
 
-export const usePrayerRequest = () => {
+export const useContactRequest = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
@@ -19,7 +19,7 @@ export const usePrayerRequest = () => {
         setSuccess(true);
         return { success: true, message: result.message };
       } else {
-        setError(result.message || 'Erro ao enviar pedido');
+        setError(result.message || 'Erro ao enviar mensagem');
         return { success: false, message: result.message };
       }
     } catch (err) {

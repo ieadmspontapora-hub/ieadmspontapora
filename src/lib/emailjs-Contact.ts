@@ -1,7 +1,7 @@
 import { send } from '@emailjs/browser';
 
 const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const TEMPLATE_ID = 'template_w0j18yi'; // Novo template ID fornecido
 const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
 export interface ContactRequestData {
@@ -10,7 +10,6 @@ export interface ContactRequestData {
   email: string;
   mensagem: string;
 }
-
 
 export const sendContactRequestEmail = async (data: ContactRequestData) => {
   try {
@@ -31,14 +30,14 @@ export const sendContactRequestEmail = async (data: ContactRequestData) => {
 
     return {
       success: true,
-      message: 'Pedido de oração enviado com sucesso!',
+      message: 'Mensagem enviada com sucesso!',
       response: response,
     };
   } catch (error) {
     console.error('Erro ao enviar e-mail:', error);
     return {
       success: false,
-      message: 'Erro ao enviar pedido de oração. Tente novamente.',
+      message: 'Erro ao enviar mensagem. Tente novamente.',
       error: error,
     };
   }
