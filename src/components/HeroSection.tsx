@@ -15,10 +15,11 @@ const HeroSection = () => {
   ];
 
   const carouselImagesMobile = [
+    'https://res.cloudinary.com/dapypkcbb/image/upload/v1765835831/Aqui_Jesus_upscayl_5x_upscayl-standard-4x_vgqoic.png',
     'https://res.cloudinary.com/dapypkcbb/image/upload/v1765835587/Peniel_upscayl_5x_upscayl-standard-4x_jvp23g.png',
     'https://res.cloudinary.com/dapypkcbb/image/upload/v1765836155/UMADEMATS_upscayl_5x_upscayl-standard-4x_jibdkd.png',
     'https://res.cloudinary.com/dapypkcbb/image/upload/v1765836342/CIFAD_sta85v.png',
-    'https://res.cloudinary.com/dapypkcbb/image/upload/v1765835831/Aqui_Jesus_upscayl_5x_upscayl-standard-4x_vgqoic.png',
+    
   ];
 
   const isMobile = window.innerWidth < 768;
@@ -27,7 +28,7 @@ const HeroSection = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prev) => (prev + 1) % images.length);
-    }, 5000);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, [images.length]);
@@ -71,11 +72,7 @@ const HeroSection = () => {
             </Button>
 
             <Button
-              onClick={() =>
-                document
-                  .getElementById('contact')
-                  ?.scrollIntoView({ behavior: 'smooth' })
-              }
+              onClick={() => navigate('/Contato')}
               className="bg-white text-blue-900 hover:bg-white/90 font-bold px-7 py-3 shadow-xl"
             >
               Fale conosco

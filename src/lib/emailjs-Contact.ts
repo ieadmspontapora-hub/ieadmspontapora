@@ -4,7 +4,7 @@ const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
-export interface PrayerRequestData {
+export interface ContactRequestData {
   nomeCompleto: string;
   celular: string;
   email: string;
@@ -12,7 +12,7 @@ export interface PrayerRequestData {
 }
 
 
-export const sendPrayerRequestEmail = async (data: PrayerRequestData) => {
+export const sendContactRequestEmail = async (data: ContactRequestData) => {
   try {
     const templateParams = {
       nomeCompleto: data.nomeCompleto,

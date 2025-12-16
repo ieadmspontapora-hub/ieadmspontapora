@@ -371,7 +371,7 @@ const AboutPage = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
-                onClick={() => navigate('/#contact')}
+                onClick={() => navigate('/Contato')}
                 className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold text-lg px-8 py-3"
               >
                 Entre em Contato

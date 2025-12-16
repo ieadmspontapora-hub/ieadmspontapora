@@ -10,7 +10,7 @@ type MenuItem = {
 const menuItems: MenuItem[] = [
   { label: "Início", href: "/" },
   { label: "Sobre", href: "/sobre" },
-  { label: "Liderança", href: "/lideranca" },
+  { label: "Redes Sociais", href: "/redes-sociais" },
   { label: "Cultos", href: "/cultos" },
   { label: "Eventos", href: "/eventos" },
   { label: "Contato", href: "/contato" },
@@ -32,7 +32,7 @@ const Header = () => {
               className="h-10 w-auto object-contain"
             />
             <span className="text-white text-xl font-bold">
-              IEADMS
+              IEADMS PP
             </span>
           </Link>
 

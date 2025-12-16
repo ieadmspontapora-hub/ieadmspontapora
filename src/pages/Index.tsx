@@ -31,7 +31,7 @@ const Index = () => {
           <NossaIgrejaCard />
           <ContributionCard />
           <PrayerRequestCard />
-          <ContactSection />
+         
         </main>
         <Footer />
       </div>
