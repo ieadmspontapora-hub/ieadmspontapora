@@ -10,11 +10,11 @@ export default function Eventos() {
 
   const events = [
     {
-      title: "Acampadentro",
-      date: "15-17 de Fevereiro",
-      time: "18:00 - 17:00",
-      location: "Centro de Eventos da Igreja",
-      description: "Um tempo de renovação espiritual e comunhão intensa com Deus.",
+      title: "Retiro Acampadentro",
+      date: "16-17 de Fevereiro",
+      time: "17:00 - 15:00",
+      location: "ACS PMBM MS Ponta Porã",
+      description: "Uma noite intensa na presença de Deus. Louvor, palavra, amizade e experiências que fortalecem a fé.",
       image: "https://res.cloudinary.com/dapypkcbb/image/upload/v1765831121/UMADEMATS_zfrsfo.png"
     }
   ];
@@ -34,19 +34,10 @@ export default function Eventos() {
               Participe de nossos eventos especiais e fortaleça sua fé em comunidade.
             </p>
           </div>
+          
         </section>
 
-        {/* Botão Voltar */}
-        <div className="container mx-auto px-6 mt-8">
-          <Button
-            onClick={() => navigate("/")}
-            variant="ghost"
-            className="flex items-center gap-2 bg-gradient-to-r from-blue-900 to-blue-700 text-white shadow-md"
-          >
-            <ArrowLeft size={18} />
-            <span className="hidden sm:inline">Voltar para o início</span>
-          </Button>
-        </div>
+       
 
         {/* Conteúdo com papel amassado */}
         <section
@@ -58,25 +49,38 @@ export default function Eventos() {
             backgroundPosition: "center",
           }}
         >
+          
           {/* Overlay */}
           <div className="absolute inset-0 bg-white/80"></div>
 
           <div className="relative container mx-auto px-6">
-            {/* Grid de eventos */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-              {events.map((event, index) => (
-                <EventCard
-                  key={index}
-                  title={event.title}
-                  date={event.date}
-                  time={event.time}
-                  location={event.location}
-                  description={event.description}
-                  image={event.image}
-                />
-              ))}
-            </div>
-          </div>
+  {/* Botão Voltar */}
+  <div className="mb-8">
+    <Button
+      onClick={() => navigate("/")}
+      variant="ghost"
+      className="flex items-center gap-2 bg-gradient-to-r from-blue-900 to-blue-700 text-white shadow-md"
+    >
+      <ArrowLeft size={18} />
+      <span className="hidden sm:inline">Voltar para o início</span>
+    </Button>
+  </div>
+
+  {/* Grid de eventos */}
+  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+    {events.map((event, index) => (
+      <EventCard
+        key={index}
+        title={event.title}
+        date={event.date}
+        time={event.time}
+        location={event.location}
+        description={event.description}
+        image={event.image}
+      />
+    ))}
+  </div>
+</div>
         </section>
       </main>
 
