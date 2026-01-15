@@ -4,6 +4,8 @@ import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import PixPagamento from "@/components/PixPagamento";
+
 
 export default function FormularioAcampadentro() {
   const navigate = useNavigate();
@@ -83,7 +85,7 @@ export default function FormularioAcampadentro() {
         try {
           const formData = new FormData(form as HTMLFormElement);
           const response = await fetch(
-            "https://script.google.com/macros/s/AKfycbyonKPdZuMM96ZPeFyWiYR-q0xxAihTHoQHCePzPTFWPHaXvsqMv5S4UVHt4AjOK8kR/exec",
+            "https://script.google.com/macros/s/AKfycbygqcXwCYFW4bgp5M8vsJHTf02pf-QiRST8eSWIYbexs1bNkRjwY3ZpcgBJkDDhjzn5/exec",
             {
               method: "POST",
               body: formData,
@@ -125,7 +127,7 @@ export default function FormularioAcampadentro() {
               Inscrição - Acampadentro
             </h1>
             <p className="text-lg">
-              Preencha o formulário abaixo para se inscrever no Acampadentro 2024.
+              Preencha o formulário abaixo para se inscrever no Acampadentro 2026.
             </p>
           </div>
         </section>
@@ -165,7 +167,7 @@ export default function FormularioAcampadentro() {
   htmlFor="telefone_participante"
   className="block text-sm font-medium text-gray-700 mb-2"
 >
-  Telefone / WhatsApp *
+  Telefone / WhatsApp 
 </label>
 
 <input
@@ -182,7 +184,27 @@ export default function FormularioAcampadentro() {
  </div> </div> </div> <hr className="border-gray-300" /> {/* DADOS DO RESPONSÁVEL */} <div className="bg-white rounded-lg p-6 shadow-lg"> <h3 className="text-xl font-bold text-blue-900 mb-6 flex items-center gap-2"> 👨‍👩‍👧 DADOS DO RESPONSÁVEL </h3> <p className="text-gray-700 mb-4">O participante é menor de idade?</p> <div className="flex gap-6 mb-6"> <label className="flex items-center gap-2 cursor-pointer"> <input type="radio" name="menor_idade" value="Sim" required className="text-blue-600 focus:ring-blue-500" /> <span>Sim</span> </label> <label className="flex items-center gap-2 cursor-pointer"> <input type="radio" name="menor_idade" value="Não" className="text-blue-600 focus:ring-blue-500" /> <span>Não</span> </label> </div> <div id="dados-responsavel" className="hidden"> <div className="grid md:grid-cols-2 gap-6"> <div> <label htmlFor="nome_responsavel" className="block text-sm font-medium text-gray-700 mb-2"> Nome do responsável </label> <input type="text" id="nome_responsavel" name="nome_responsavel" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Nome do responsável" /> </div> <div> <label htmlFor="telefone_responsavel" className="block text-sm font-medium text-gray-700 mb-2"> Telefone do responsável </label> <input type="tel" id="telefone_responsavel" name="telefone_responsavel" className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="(00) 00000-0000"  onChange={(e) => {
     e.target.value = maskTelefone(e.target.value);
   }} /> </div> </div> </div> </div> <hr className="border-gray-300" /> {/* INFORMAÇÕES DO GRUPO */} <div className="bg-white rounded-lg p-6 shadow-lg"> <h3 className="text-xl font-bold text-blue-900 mb-6 flex items-center gap-2"> ⛪ INFORMAÇÕES DO GRUPO </h3> <p className="text-gray-700 mb-4">Você faz parte da UMADEMATS?</p> <div className="flex gap-6"> <label className="flex items-center gap-2 cursor-pointer"> <input type="radio" name="umademats" value="Sim" required className="text-blue-600 focus:ring-blue-500" /> <span>Sim</span> </label> <label className="flex items-center gap-2 cursor-pointer"> <input type="radio" name="umademats" value="Não" className="text-blue-600 focus:ring-blue-500" /> <span>Não</span> </label> </div> </div> <hr className="border-gray-300" /> {/* SAÚDE E SEGURANÇA */} <div className="bg-white rounded-lg p-6 shadow-lg"> <h3 className="text-xl font-bold text-blue-900 mb-6 flex items-center gap-2"> ⚕️ SAÚDE E SEGURANÇA </h3> <p className="text-gray-700 mb-4">Possui alergia, restrição alimentar ou condição de saúde?</p> <div className="flex gap-6 mb-6"> <label className="flex items-center gap-2 cursor-pointer"> <input type="radio" name="condicao_saude" value="Não" required className="text-blue-600 focus:ring-blue-500" /> <span>Não</span> </label> <label className="flex items-center gap-2 cursor-pointer"> <input type="radio" name="condicao_saude" value="Sim" className="text-blue-600 focus:ring-blue-500" /> <span>Sim</span> </label> </div> <div id="descricao-saude" className="hidden"> <label htmlFor="descricao_saude" className="block text-sm font-medium text-gray-700 mb-2"> Descrição da condição de saúde </label> <textarea id="descricao_saude" name="descricao_saude" rows={4} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Se sim, descreva aqui..." /> </div> </div> <hr className="border-gray-300" /> {/* AUTORIZAÇÕES */} <div className="bg-white rounded-lg p-6 shadow-lg"> <h3 className="text-xl font-bold text-blue-900 mb-6 flex items-center gap-2"> 📜 AUTORIZAÇÕES </h3> <div className="space-y-4"> <label className="flex items-start gap-3 cursor-pointer"> <input type="checkbox" name="autorizacao_responsavel" value="Sim" required className="mt-1 text-blue-600 focus:ring-blue-500" /> <span className="text-gray-700">Declaro que tenho autorização dos pais ou responsáveis legais</span> </label> <label className="flex items-start gap-3 cursor-pointer"> <input type="checkbox" name="concorda_regras" value="Sim" required className="mt-1 text-blue-600 focus:ring-blue-500" /> <span className="text-gray-700">Concordo com as regras e orientações do evento</span> </label> </div> </div> <hr className="border-gray-300" /> {/* OBSERVAÇÕES FINAIS */} <div className="bg-white rounded-lg p-6 shadow-lg"> <h3 className="text-xl font-bold text-blue-900 mb-6 flex items-center gap-2"> 📝 OBSERVAÇÕES FINAIS </h3> <label htmlFor="observacoes" className="block text-sm font-medium text-gray-700 mb-2"> Observações (opcional) </label> <textarea id="observacoes" name="observacoes" rows={4} className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Deseja acrescentar alguma observação?" /> </div>
+  <PixPagamento />
+{/* CONFIRMAÇÃO DE PAGAMENTO PIX */}
+<div className="bg-white rounded-lg p-6 shadow-lg">
+  <h3 className="text-xl font-bold text-blue-900 mb-4 flex items-center gap-2">
+    ✅ CONFIRMAÇÃO DO PAGAMENTO
+  </h3>
+<input type="hidden" name="pix_status" value="Pendente" />
 
+ <label className="flex items-start gap-3 cursor-pointer">
+  <input
+    type="checkbox"
+    required
+    className="mt-1 text-emerald-600 focus:ring-emerald-500"
+  />
+    <span className="text-gray-700 text-sm leading-relaxed">
+      Confirmo que realizei o pagamento via Pix ou me comprometo a realizá-lo
+      conforme as orientações acima. Estou ciente de que minha inscrição ficará
+      <strong className="text-emerald-600"> pendente de confirmação</strong> até a verificação do pagamento.
+    </span>
+  </label>
+</div>
                   <div className="flex flex-col items-center gap-4">
                     <p className="text-sm text-gray-600 h-6">{status}</p>
 
