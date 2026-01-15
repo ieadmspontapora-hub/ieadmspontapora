@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Calendar, MapPin } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 interface EventCardProps {
   title: string;
@@ -44,9 +45,11 @@ export default function EventCard({
           <MapPin size={16} />
           <span>{location}</span>
         </div>
-        <Button className="w-full bg-yellow-500 hover:bg-yellow-600 text-blue-900">
-          Inscrever-se
-        </Button>
+        <Link to="/formulario-acampadentro">
+          <Button className="w-full bg-yellow-500 hover:bg-yellow-600 text-blue-900">
+            Inscrever-se
+          </Button>
+        </Link>
       </CardContent>
     </Card>
   );

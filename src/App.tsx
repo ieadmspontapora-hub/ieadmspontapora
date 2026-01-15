@@ -9,6 +9,7 @@ import NotFound from "./pages/NotFound";
 import ContactPage from "./pages/ContactPage";
 import SocialPage from "./pages/socialPage";
 import Eventos from "./pages/Eventos";
+import FormularioAcampadentro from "./pages/FormularioAcampadentro";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -23,6 +24,7 @@ const App = () => (
           <Route path="/contato" element={<ContactPage />} />
           <Route path="/redes-sociais" element={<SocialPage />} />
           <Route path="/eventos" element={<Eventos />} />
+          <Route path="/formulario-acampadentro" element={<FormularioAcampadentro />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
