@@ -12,7 +12,7 @@ export default function Eventos() {
     {
       title: "Acampadentro INSIDE 2026",
       date: "16-17 de Fevereiro",
-      time: "17:00 - 15:00",
+      time: "14:00 - 15:00",
       location: "ACS PMBM MS Ponta Porã",
       description: "Uma noite intensa na presença de Deus. Louvor, palavra, amizade e experiências que fortalecem a fé.  “Não vos conformeis com este mundo” Romanos 12:2",
       image: "https://res.cloudinary.com/dapypkcbb/image/upload/v1765831121/UMADEMATS_zfrsfo.png"
