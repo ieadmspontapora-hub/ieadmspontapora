@@ -10,6 +10,8 @@ import ContactPage from "./pages/ContactPage";
 import SocialPage from "./pages/socialPage";
 import Eventos from "./pages/Eventos";
 import FormularioAcampadentro from "./pages/FormularioAcampadentro";
+import DepartamentoUmademats from "./pages/DepartamentoUmademats";
+import Departamentos from "./pages/Departamentos";
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -25,6 +27,8 @@ const App = () => (
           <Route path="/redes-sociais" element={<SocialPage />} />
           <Route path="/eventos" element={<Eventos />} />
           <Route path="/formulario-acampadentro" element={<FormularioAcampadentro />} />
+          <Route path="/departamentos" element={<Departamentos />} />
+          <Route path="/departamentos/umademats" element={<DepartamentoUmademats />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
