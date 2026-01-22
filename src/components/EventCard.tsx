@@ -1,8 +1,8 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Calendar, MapPin } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Calendar, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 interface EventCardProps {
   title: string;
@@ -19,10 +19,9 @@ export default function EventCard({
   time,
   location,
   description,
-  image
+  image,
 }: EventCardProps) {
-
-  // 📅 DATA DE ABERTURA DAS INSCRIÇÕES (Cuiabá - MT)
+  // 🕘 Data de abertura das inscrições (Cuiabá - UTC-4)
   const aberturaInscricoes = new Date("2026-01-22T09:00:00-04:00");
 
   const [tempoRestante, setTempoRestante] = useState<number>(
@@ -54,7 +53,6 @@ export default function EventCard({
 
   return (
     <Card className="overflow-hidden hover:shadow-lg transition-shadow">
-
       {/* IMAGEM */}
       <div
         className="h-48 bg-cover bg-center"
@@ -74,17 +72,16 @@ export default function EventCard({
         </div>
       </div>
 
-      {/* CONTEÚDO */}
+      {/* HEADER */}
       <CardHeader>
-        <CardTitle className="text-xl text-blue-900">
-          {title}
-        </CardTitle>
+        <CardTitle className="text-xl text-blue-900">{title}</CardTitle>
       </CardHeader>
 
+      {/* CONTEÚDO */}
       <CardContent>
         <p className="text-gray-600 mb-4">{description}</p>
 
-        <div className="flex items-center gap-2 text-gray-600 mb-4">
+        <div className="flex items-center gap-2 text-gray-600 mb-6">
           <MapPin size={16} />
           <span>{location}</span>
         </div>
@@ -95,10 +92,11 @@ export default function EventCard({
             disabled={!inscricoesAbertas}
             className={`
               w-full
-              transition-all
-              ${inscricoesAbertas
-                ? "bg-yellow-500 hover:bg-yellow-600 text-blue-900"
-                : "bg-gray-300 text-gray-600 cursor-not-allowed"}
+              ${
+                inscricoesAbertas
+                  ? "bg-yellow-500 hover:bg-yellow-600 text-blue-900"
+                  : "bg-gray-300 text-gray-600 cursor-not-allowed"
+              }
             `}
           >
             {inscricoesAbertas
@@ -106,7 +104,6 @@ export default function EventCard({
               : `Abre em ${formatarTempo(tempoRestante)}`}
           </Button>
         </Link>
-
       </CardContent>
     </Card>
   );

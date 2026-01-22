@@ -4,7 +4,7 @@ import { useState } from "react";
 
 export default function PixPagamento() {
   const pixKey = "57fc3f2a-f37e-42ce-8f1b-9bdedc4551a8";
-  const qrCodeUrl = "https://SUA_URL_DO_QR_CODE_AQUI.png"; // 🔗 coloque a URL aqui
+  const qrCodeUrl = "https://res.cloudinary.com/dapypkcbb/image/upload/v1768504553/QRcodeJovens_upscayl_5x_upscayl-standard-4x_d7smyf.png"; // 🔗 coloque a URL aqui
 
   const [copied, setCopied] = useState(false);
 
