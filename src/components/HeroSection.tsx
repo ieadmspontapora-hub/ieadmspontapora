@@ -5,100 +5,85 @@ import { useNavigate } from 'react-router-dom';
 
 const HeroSection = () => {
   const navigate = useNavigate();
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [index, setIndex] = useState(0);
 
-  const carouselImagesDesktop = [
-    'https://res.cloudinary.com/dapypkcbb/image/upload/v1765830413/Conex%C3%A3oPeniel_upscayl_5x_upscayl-standard-4x_f3kvr8.png',
-    'https://res.cloudinary.com/dapypkcbb/image/upload/v1765831121/UMADEMATS_zfrsfo.png',
-    'https://res.cloudinary.com/dapypkcbb/image/upload/v1765831497/photo_4956406832864275952_y_upscayl_5x_upscayl-standard-4x_1_iohoyd.png',
-    'https://res.cloudinary.com/dapypkcbb/image/upload/v1765831860/photo_5091448636239359565_y_upscayl_5x_upscayl-standard-4x_1_s72vip.png'
-  ];
-
-  const carouselImagesMobile = [
+  const images = [
     'https://res.cloudinary.com/dapypkcbb/image/upload/v1765923306/Aqui_Jesus_3__upscayl_5x_upscayl-standard-4x_wfoxmn.png',
     'https://res.cloudinary.com/dapypkcbb/image/upload/v1765835587/Peniel_upscayl_5x_upscayl-standard-4x_jvp23g.png',
     'https://res.cloudinary.com/dapypkcbb/image/upload/v1765836155/UMADEMATS_upscayl_5x_upscayl-standard-4x_jibdkd.png',
-    'https://res.cloudinary.com/dapypkcbb/image/upload/v1765836342/CIFAD_sta85v.png',
-    
   ];
 
-  const isMobile = window.innerWidth < 768;
-  const images = isMobile ? carouselImagesMobile : carouselImagesDesktop;
-
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((prev) => (prev + 1) % images.length);
-    }, 3000);
+    const timer = setInterval(() => {
+      setIndex((prev) => (prev + 1) % images.length);
+    }, 4000);
 
-    return () => clearInterval(interval);
-  }, [images.length]);
+    return () => clearInterval(timer);
+  }, []);
 
   return (
-    <section id="hero" className="relative h-screen overflow-hidden">
-      {/* Background */}
-      <div className="absolute inset-0">
-        {images.map((image, index) => (
-          <div
-            key={index}
-            className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${
-              index === currentImageIndex ? 'opacity-100' : 'opacity-0'
-            }`}
-            style={{ backgroundImage: `url('${image}')` }}
-          />
-        ))}
-      </div>
+    <section className="relative h-screen overflow-hidden">
+      {/* BACKGROUND */}
+      {images.map((img, i) => (
+        <div
+          key={i}
+          className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${
+            i === index ? 'opacity-100' : 'opacity-0'
+          }`}
+          style={{ backgroundImage: `url('${img}')` }}
+        />
+      ))}
 
-      {/* Gradient overlay (sem blur) */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/25 to-transparent" />
+      {/* OVERLAY CINEMATOGRÁFICO */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-black/30" />
 
-      {/* Conteúdo */}
-      <div className="relative z-10 h-full flex items-center">
-        <div className="max-w-6xl px-6 md:px-12">
-          <h1 className="text-3xl md:text-6xl font-extrabold text-white leading-tight drop-shadow-lg">
-            Uma comunidade viva <br />
-            na presença de Deus
-          </h1>
+      {/* CONTEÚDO */}
+      <div className="relative z-10 h-full flex flex-col justify-center px-6 text-center text-white">
+        <span className="uppercase tracking-widest text-xs text-white/70 mb-4">
+          UMA COMUNIDADE CRISTÃ
+        </span>
 
-          <p className="mt-4 max-w-xl text-base md:text-xl text-white/95 drop-shadow-md">
-            Um lugar de fé, comunhão e transformação para você e sua família.
-          </p>
+        <h1 className="text-3xl font-extrabold leading-tight">
+          Uma comunidade viva<br />na presença de Deus
+        </h1>
 
-          <div className="mt-8 flex flex-col sm:flex-row gap-4">
-            <Button
-              onClick={() => navigate('/sobre')}
-              className="bg-gradient-to-r from-blue-900 to-blue-700 text-white shadow-lg z-50"
-            >
-              Conheça nossa história
-            </Button>
+        <p className="mt-4 text-sm text-white/90 max-w-md mx-auto">
+          Um lugar de fé, comunhão e transformação para você e sua família.
+        </p>
 
-            <Button
-              onClick={() => navigate('/Contato')}
-              className="bg-white text-blue-900 hover:bg-white/90 font-bold px-7 py-3 shadow-xl"
-            >
-              Fale conosco
-            </Button>
-          </div>
+        <div className="mt-8 flex flex-col gap-3">
+          <Button
+            onClick={() => navigate('/sobre')}
+            className="bg-yellow-500 text-blue-900 font-semibold"
+          >
+            Conheça nossa história
+          </Button>
+
+        <Button
+  onClick={() => navigate('/Contato')}
+  className="border border-white/80 text-white bg-white/10 backdrop-blur hover:bg-white hover:text-blue-900 transition-all"
+>
+  Fale conosco
+</Button>
+
+        </div>
+
+        {/* INDICADORES MINIMAL */}
+        <div className="mt-10 flex justify-center gap-3">
+          {images.map((_, i) => (
+            <span
+              key={i}
+              className={`h-1 rounded-full transition-all ${
+                i === index ? 'w-8 bg-white' : 'w-3 bg-white/40'
+              }`}
+            />
+          ))}
         </div>
       </div>
 
-      {/* Indicadores */}
-      <div className="absolute bottom-14 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-        {images.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentImageIndex(index)}
-            className={`h-2 rounded-full transition-all ${
-              index === currentImageIndex
-                ? 'w-6 bg-white'
-                : 'w-2 bg-white/50'
-            }`}
-          />
-        ))}
-      </div>
-
-      {/* Scroll indicator */}
+      {/* SCROLL */}
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white animate-bounce">
-        <ArrowDown size={22} />
+        <ArrowDown size={20} />
       </div>
     </section>
   );
