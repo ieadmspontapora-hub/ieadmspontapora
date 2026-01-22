@@ -25,6 +25,15 @@ export default function FormularioCamisetas() {
   );
   const [modelo, setModelo] = useState("");
 
+  /* ================= MODAL GUIA DE TAMANHOS ================= */
+  const [isGuideOpen, setIsGuideOpen] = useState(false);
+  const [selectedGuide, setSelectedGuide] = useState<"adulto" | "infantil" | null>(null);
+
+  const guiaAdulto =
+    "https://res.cloudinary.com/dgpsnu8ks/image/upload/v1769118761/Guia_de_tamanho2_upscayl_5x_upscayl-standard-4x_nrpgxj.png";
+  const guiaInfantil =
+    "https://res.cloudinary.com/dgpsnu8ks/image/upload/v1769118761/Guia_de_tamanho1_upscayl_5x_upscayl-standard-4x_qwzldj.png";
+
   /* 🔁 REDIRECT APÓS SUCESSO */
   useEffect(() => {
     if (submitSuccess) {
@@ -96,7 +105,6 @@ export default function FormularioCamisetas() {
     }
   };
 
-  /* ================= UI ================= */
   return (
     <div className="min-h-screen flex flex-col" ref={topRef}>
       <Header />
@@ -187,6 +195,17 @@ export default function FormularioCamisetas() {
                     </option>
                   ))}
                 </select>
+
+                {/* Botão Guia de Tamanhos MOBILE */}
+                <div className="text-center mt-2 ">
+                  <Button
+                    type="button"
+                    variant="outline"
+                    onClick={() => setIsGuideOpen(true)}
+                  >
+                    📏 Guia de Tamanhos
+                  </Button>
+                </div>
 
                 {/* Tipo */}
                 <div className="flex gap-6">
@@ -290,6 +309,69 @@ export default function FormularioCamisetas() {
             )}
           </div>
         </section>
+
+        {/* MODAL GUIA DE TAMANHOS */}
+        {isGuideOpen && (
+          <div
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm"
+            onClick={() => { setIsGuideOpen(false); setSelectedGuide(null); }}
+          >
+            <div
+              className="bg-white rounded-xl p-6 max-w-xl w-full flex flex-col items-center gap-4 relative"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* X para fechar */}
+              <button
+                onClick={() => {
+                  if (selectedGuide) setSelectedGuide(null);
+                  else setIsGuideOpen(false);
+                }}
+                className="absolute top-3 right-3 text-gray-600 hover:text-gray-900 font-bold text-lg"
+              >
+                ✕
+              </button>
+
+              {/* MOBILE */}
+              <div className="flex flex-col gap-4 w-full md:hidden">
+                {!selectedGuide ? (
+                  <>
+                    <h3 className="text-xl font-bold text-center text-blue-900 mb-2">
+                      Escolha a categoria
+                    </h3>
+                    <Button onClick={() => setSelectedGuide("adulto")}>Adulto</Button>
+                    <Button onClick={() => setSelectedGuide("infantil")}>Infantil</Button>
+                  </>
+                ) : (
+                  <img
+                    src={selectedGuide === "adulto" ? guiaAdulto : guiaInfantil}
+                    alt={`Guia de Tamanho ${selectedGuide}`}
+                    className="w-full h-auto max-h-[80vh] object-contain rounded-xl shadow"
+                  />
+                )}
+              </div>
+
+              {/* DESKTOP */}
+              <div className="hidden md:flex flex-col gap-4 w-full">
+                <h3 className="text-xl font-bold text-center text-blue-900 mb-2">
+                  Guia de Tamanhos
+                </h3>
+                <div className="flex gap-4 w-full">
+                  <img
+                    src={guiaAdulto}
+                    alt="Guia Adulto"
+                    className="w-1/2 h-auto object-contain rounded-xl shadow"
+                  />
+                  <img
+                    src={guiaInfantil}
+                    alt="Guia Infantil"
+                    className="w-1/2 h-auto object-contain rounded-xl shadow"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
       </main>
 
       <Footer />
