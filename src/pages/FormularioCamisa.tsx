@@ -1,19 +1,28 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function FormularioCamisetas() {
   const navigate = useNavigate();
+  const topRef = useRef<HTMLDivElement>(null);
+
+  /* ================= SCROLL PARA TOPO ================= */
+  useEffect(() => {
+    topRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, []);
 
   /* ================= FORM ================= */
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
-const qrCodeUrl = "https://res.cloudinary.com/dgpsnu8ks/image/upload/v1769105185/Captura_de_tela_2026-01-22_140508_upscayl_5x_upscayl-standard-4x_doxe59.png";
+  const qrCodeUrl =
+    "https://res.cloudinary.com/dgpsnu8ks/image/upload/v1769105185/Captura_de_tela_2026-01-22_140508_upscayl_5x_upscayl-standard-4x_doxe59.png";
 
   const [quantidade, setQuantidade] = useState(1);
-  const [tipoFaixa, setTipoFaixa] = useState<"infantil" | "adulto">("adulto");
+  const [tipoFaixa, setTipoFaixa] = useState<"infantil" | "adulto">(
+    "adulto"
+  );
   const [modelo, setModelo] = useState("");
 
   /* 🔁 REDIRECT APÓS SUCESSO */
@@ -22,7 +31,6 @@ const qrCodeUrl = "https://res.cloudinary.com/dgpsnu8ks/image/upload/v1769105185
       const timer = setTimeout(() => {
         navigate("/departamentos/umademats");
       }, 3000);
-
       return () => clearTimeout(timer);
     }
   }, [submitSuccess, navigate]);
@@ -67,7 +75,6 @@ const qrCodeUrl = "https://res.cloudinary.com/dgpsnu8ks/image/upload/v1769105185
 
     try {
       const formData = new FormData(e.currentTarget);
-
       formData.append("valor_total", valorTotal.toString());
       formData.append("pagamento_status", "Pendente");
 
@@ -91,7 +98,7 @@ const qrCodeUrl = "https://res.cloudinary.com/dgpsnu8ks/image/upload/v1769105185
 
   /* ================= UI ================= */
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col" ref={topRef}>
       <Header />
 
       <main className="flex-grow">
@@ -113,8 +120,7 @@ const qrCodeUrl = "https://res.cloudinary.com/dgpsnu8ks/image/upload/v1769105185
                     Pedido enviado com sucesso 🎉
                   </h3>
                   <p>
-                    Status:{" "}
-                    <strong className="text-emerald-600">Pendente</strong>
+                    Status: <strong className="text-emerald-600">Pendente</strong>
                   </p>
                   <p className="mt-2 text-sm">
                     Você será redirecionado em alguns segundos...
@@ -126,6 +132,7 @@ const qrCodeUrl = "https://res.cloudinary.com/dgpsnu8ks/image/upload/v1769105185
                 onSubmit={handleSubmit}
                 className="max-w-2xl mx-auto bg-white rounded-2xl shadow-xl p-8 space-y-8"
               >
+                {/* Nome */}
                 <input
                   name="nome"
                   required
@@ -133,19 +140,20 @@ const qrCodeUrl = "https://res.cloudinary.com/dgpsnu8ks/image/upload/v1769105185
                   className="w-full px-4 py-3 border rounded-lg"
                 />
 
+                {/* Quantidade */}
                 <input
-  name="quantidade"
-  type="number"
-  min={1}
-  value={quantidade}
-  onChange={(e) => {
-    const valor = e.target.value.replace(/^0+/, "");
-    setQuantidade(valor === "" ? 0 : Number(valor));
-  }}
-  className="w-full px-4 py-3 border rounded-lg"
-/>
+                  name="quantidade"
+                  type="number"
+                  min={1}
+                  value={quantidade}
+                  onChange={(e) => {
+                    const valor = e.target.value.replace(/^0+/, "");
+                    setQuantidade(valor === "" ? 0 : Number(valor));
+                  }}
+                  className="w-full px-4 py-3 border rounded-lg"
+                />
 
-
+                {/* Faixa */}
                 <div className="flex gap-6">
                   {["infantil", "adulto"].map((f) => (
                     <label key={f} className="flex gap-2 items-center">
@@ -163,6 +171,7 @@ const qrCodeUrl = "https://res.cloudinary.com/dgpsnu8ks/image/upload/v1769105185
                   ))}
                 </div>
 
+                {/* Tamanho */}
                 <select
                   name="tamanho"
                   required
@@ -179,6 +188,7 @@ const qrCodeUrl = "https://res.cloudinary.com/dgpsnu8ks/image/upload/v1769105185
                   ))}
                 </select>
 
+                {/* Tipo */}
                 <div className="flex gap-6">
                   {["Unissex", "Baby Look"].map((t) => (
                     <label key={t} className="flex gap-2 items-center">
@@ -188,6 +198,7 @@ const qrCodeUrl = "https://res.cloudinary.com/dgpsnu8ks/image/upload/v1769105185
                   ))}
                 </div>
 
+                {/* Modelo */}
                 <div className="grid sm:grid-cols-2 gap-6">
                   {[
                     {
@@ -232,34 +243,34 @@ const qrCodeUrl = "https://res.cloudinary.com/dgpsnu8ks/image/upload/v1769105185
                   ))}
                 </div>
 
+                {/* PIX */}
                 <div className="border-t pt-6 text-center space-y-4">
-  <p>
-    Valor total: <strong>R$ {valorTotal},00</strong>
-  </p>
+                  <p>
+                    Valor total: <strong>R$ {valorTotal},00</strong>
+                  </p>
 
-  {/* QR CODE */}
-  {qrCodeUrl && (
-    <div className="flex justify-center">
-      <div className="bg-white p-3 rounded-xl shadow">
-        <img
-          src={qrCodeUrl}
-          alt="QR Code Pix"
-          className="w-44 h-44 object-contain"
-        />
-      </div>
-    </div>
-  )}
+                  {qrCodeUrl && (
+                    <div className="flex justify-center">
+                      <div className="bg-white p-3 rounded-xl shadow">
+                        <img
+                          src={qrCodeUrl}
+                          alt="QR Code Pix"
+                          className="w-44 h-44 object-contain"
+                        />
+                      </div>
+                    </div>
+                  )}
 
-  <p className="text-sm text-gray-600">
-    Escaneie o QR Code ou copie a chave Pix
-  </p>
+                  <p className="text-sm text-gray-600">
+                    Escaneie o QR Code ou copie a chave Pix
+                  </p>
 
-  <Button onClick={copiarPix} type="button">
-    {copiado ? "✅ Pix copiado" : "📋 Copiar Pix"}
-  </Button>
-</div>
+                  <Button onClick={copiarPix} type="button">
+                    {copiado ? "✅ Pix copiado" : "📋 Copiar Pix"}
+                  </Button>
+                </div>
 
-
+                {/* BOTÕES */}
                 <Button
                   disabled={isSubmitting}
                   className="w-full bg-yellow-500 hover:bg-yellow-600 text-blue-900"
