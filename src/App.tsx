@@ -11,6 +11,8 @@ import SocialPage from "./pages/socialPage";
 import Eventos from "./pages/Eventos";
 import FormularioAcampadentro from "./pages/FormularioAcampadentro";
 import DepartamentoUmademats from "./pages/DepartamentoUmademats";
+import FormularioCamisa from "./pages/FormularioCamisa";
+
 import Departamentos from "./pages/Departamentos";
 const queryClient = new QueryClient();
 
@@ -27,6 +29,8 @@ const App = () => (
           <Route path="/redes-sociais" element={<SocialPage />} />
           <Route path="/eventos" element={<Eventos />} />
           <Route path="/formulario-acampadentro" element={<FormularioAcampadentro />} />
+          <Route path="/formulario-camisetas" element={<FormularioCamisa />} />
+
           <Route path="/departamentos" element={<Departamentos />} />
           <Route path="/departamentos/umademats" element={<DepartamentoUmademats />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
