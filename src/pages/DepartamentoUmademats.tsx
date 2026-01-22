@@ -193,10 +193,7 @@ export default function DepartamentoUmademats() {
                   title: "🌟 Missão",
                   text: "Somos chamados para ser luz no mundo, levando o amor de Cristo a todos os lugares.",
                 },
-                {
-                  title: "📚 Discipulado",
-                  text: "Investimos na formação de discípulos que conhecem a Palavra de Deus e vivem seus princípios.",
-                },
+                
               ].map((item, i) => (
                 <div
                   key={i}
@@ -219,9 +216,8 @@ export default function DepartamentoUmademats() {
 
             <div className="space-y-6">
               {[
-                ["🌙 Cultos de Jovens", "Todos os sábados às 19:00"],
-                ["📚 Escola de Líderes", "Formação de jovens líderes"],
-                ["🏃‍♂️ Grupos de Discipulado", "Encontros durante a semana"],
+                ["🌙 Cultos de Jovens", "Todo º3 sábado às 19:00"],
+                ["🏃‍♂️ Grupo PENIEL", "Encontro toda sexta as 19:00"],
                 ["🎉 Eventos Especiais", "Acampamentos e conferências"],
               ].map(([title, desc], i) => (
                 <div

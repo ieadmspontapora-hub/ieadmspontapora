@@ -41,57 +41,70 @@ export default function Departamentos() {
           <div className="container mx-auto px-6">
             <div className="max-w-4xl mx-auto space-y-8">
               
-              {/* UMADEMATS */}
-              <div 
-                className="bg-white rounded-lg overflow-hidden shadow-lg cursor-pointer hover:shadow-xl transition-shadow"
-                onClick={() => navigate("/departamentos/umademats")}
-              >
-                <div className="md:flex">
-                  <div className="md:w-1/3 bg-blue-900 p-8 flex items-center justify-center">
-                    <img
-                      src="https://res.cloudinary.com/dapypkcbb/image/upload/v1765831121/UMADEMATS_zfrsfo.png"
-                      alt="UMADEMATS"
-                      className="w-32 h-32 object-contain"
-                    />
-                  </div>
-                  <div className="md:w-2/3 p-8">
-                    <h2 className="text-2xl font-bold text-blue-900 mb-4">
-                      Departamento dos Jovens UMADEMATS
-                    </h2>
-                    <p className="text-gray-700 mb-4">
-                      Jovens que transformam o mundo com a força do Espírito Santo
-                    </p>
-                    <Button className="bg-blue-600 hover:bg-blue-700 text-white">
-                      Conhecer
-                    </Button>
-                  </div>
-                </div>
-              </div>
+             {/* UMADEMATS */}
+<div
+  onClick={() => navigate("/departamentos/umademats")}
+  className="relative h-72 md:h-80 rounded-xl overflow-hidden shadow-lg cursor-pointer group"
+>
+  {/* Imagem de fundo */}
+  <img
+    src="https://res.cloudinary.com/dapypkcbb/image/upload/v1765831121/UMADEMATS_zfrsfo.png"
+    alt="UMADEMATS"
+    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+  />
 
-              {/* CIFAD */}
-              <div 
-                className="bg-white rounded-lg overflow-hidden shadow-lg cursor-pointer hover:shadow-xl transition-shadow"
-                onClick={() => navigate("/departamentos/cifad")}
-              >
-                <div className="md:flex">
-                  <div className="md:w-1/3 bg-blue-900 p-8 flex items-center justify-center">
-                    <div className="w-32 h-32 bg-blue-600 rounded-full flex items-center justify-center">
-                      <span className="text-white text-4xl">👨‍👩‍👧‍👦</span>
-                    </div>
-                  </div>
-                  <div className="md:w-2/3 p-8">
-                    <h2 className="text-2xl font-bold text-blue-900 mb-4">
-                      CIFAD - Casais e Famílias
-                    </h2>
-                    <p className="text-gray-700 mb-4">
-                      Fortalecendo laços familiares e construindo lares abençoados
-                    </p>
-                    <Button className="bg-blue-600 hover:bg-blue-700 text-white">
-                      Conhecer
-                    </Button>
-                  </div>
-                </div>
-              </div>
+  {/* Overlay */}
+  <div className="absolute inset-0 bg-gradient-to-t from-blue-900/90 via-blue-900/60 to-blue-900/20" />
+
+  {/* Conteúdo */}
+  <div className="relative z-10 h-full flex flex-col justify-end p-8 text-white">
+    <h2 className="text-3xl font-extrabold mb-2">
+      UMADEMATS
+    </h2>
+    <p className="text-white/90 mb-4 max-w-md">
+      Jovens que transformam o mundo com a força do Espírito Santo
+    </p>
+
+    <div>
+      <Button className="bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-semibold">
+        Conhecer
+      </Button>
+    </div>
+  </div>
+</div>
+
+
+             {/* CIFAD */}
+<div
+  onClick={() => navigate("/departamentos/cifad")}
+  className="relative h-72 md:h-80 rounded-xl overflow-hidden shadow-lg cursor-pointer group"
+>
+  {/* 🔽 IMAGEM DE FUNDO — COLOQUE SUA URL AQUI */}
+  <img
+    src="https://res.cloudinary.com/dapypkcbb/image/upload/v1765831497/photo_4956406832864275952_y_upscayl_5x_upscayl-standard-4x_1_iohoyd.png"
+    alt="CIFAD"
+    className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+  />
+
+  {/* Overlay */}
+  <div className="absolute inset-0 bg-gradient-to-t from-blue-900/90 via-blue-900/60 to-blue-900/20" />
+
+  {/* Conteúdo */}
+  <div className="relative z-10 h-full flex flex-col justify-end p-8 text-white">
+    <h2 className="text-3xl font-extrabold mb-2">
+      CIFAD
+    </h2>
+    <p className="text-white/90 mb-4 max-w-md">
+      Mulheres e famílias unidas em oração, buscando a presença de Deus, clamando por vidas, lares e pela igreja, crendo no poder transformador da oração.
+    </p>
+
+    <div>
+      <Button className="bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-semibold">
+        Conhecer
+      </Button>
+    </div>
+  </div>
+</div>
             </div>
           </div>
         </section>
