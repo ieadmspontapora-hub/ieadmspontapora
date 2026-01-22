@@ -12,31 +12,66 @@ export default function DepartamentoUmademats() {
       <Header />
       
       <main className="flex-grow">
-        {/* Seção Hero com imagem responsiva */}
-        <section className="relative py-24 bg-gradient-to-br from-blue-900 to-blue-700 text-white">
-          <div className="container mx-auto px-6 text-center max-w-4xl">
-            {/* Imagem responsiva */}
-            <div className="mb-8">
-              <img
-                src="https://res.cloudinary.com/dapypkcbb/image/upload/v1765831121/UMADEMATS_zfrsfo.png"
-                alt="UMADEMATS"
-                className="hidden md:block w-full max-w-2xl mx-auto"
-              />
-              <img
-                src="https://res.cloudinary.com/dapypkcbb/image/upload/v1765836155/UMADEMATS_upscayl_5x_upscayl-standard-4x_jibdkd.png"
-                alt="UMADEMATS"
-                className="md:hidden w-full max-w-xs mx-auto"
-              />
-            </div>
-            
-            <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
-              Departamento dos Jovens UMADEMATS
-            </h1>
-            <p className="text-lg text-white/90">
-              Jovens que transformam o mundo com a força do Espírito Santo
-            </p>
-          </div>
-        </section>
+        {/* Hero / Header */}
+  <section className="relative h-[85vh] min-h-[520px] w-full overflow-hidden text-white">
+    
+    {/* Imagem Desktop */}
+    <img
+      src="https://res.cloudinary.com/dapypkcbb/image/upload/v1765831121/UMADEMATS_zfrsfo.png"
+      alt="UMADEMATS"
+      className="
+        hidden md:block
+        absolute inset-0
+        w-full h-full
+        object-cover
+      "
+    />
+
+    {/* Imagem Mobile */}
+    <img
+      src="https://res.cloudinary.com/dapypkcbb/image/upload/v1765836155/UMADEMATS_upscayl_5x_upscayl-standard-4x_jibdkd.png"
+      alt="UMADEMATS"
+      className="
+        md:hidden
+        absolute inset-0
+        w-full h-full
+        object-cover
+      "
+    />
+
+    {/* Overlay / Sombreamento cinematográfico */}
+    <div
+      className="
+        absolute inset-0
+        bg-gradient-to-b
+        from-black/70
+        via-black/40
+        to-blue-900/80
+      "
+    />
+
+    {/* Conteúdo */}
+    <div
+      className="
+        relative z-10
+        h-full
+        flex flex-col
+        items-center
+        justify-center
+        text-center
+        px-6
+      "
+    >
+      <h1 className="text-4xl md:text-6xl font-extrabold mb-4 drop-shadow-xl">
+        Departamento dos Jovens UMADEMATS
+      </h1>
+
+      <p className="text-lg md:text-xl text-white/90 max-w-2xl drop-shadow-md">
+        Jovens que transformam o mundo com a força do Espírito Santo
+      </p>
+    </div>
+
+  </section>
 
         {/* Botão Voltar */}
         <div className="container mx-auto px-6 mt-8">

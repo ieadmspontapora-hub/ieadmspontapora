@@ -20,8 +20,8 @@ const menuItems: MenuItem[] = [
   {
     label: "Departamentos",
     children: [
-      { label: "UMADEMATS", href: "/departamentos/umademats" },
-      { label: "CIFAD", href: "/departamentos/cifad" },
+      { label: "UMADEMATS", href: "/" },
+      { label: "CIFAD", href: "/" },
     ],
   },
 
