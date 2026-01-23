@@ -21,26 +21,28 @@ export default function EventCard({
   description,
   image,
 }: EventCardProps) {
-  // 🕘 Data de abertura das inscrições (Cuiabá - UTC-4)
-  const aberturaInscricoes = new Date("2026-01-22T09:00:00-04:00");
+  // 🛑 DATA DE ENCERRAMENTO DAS INSCRIÇÕES (Cuiabá UTC-4)
+const dataEncerramentoInscricoes = new Date("2026-02-14T23:59:00-04:00");
+
 
   const [tempoRestante, setTempoRestante] = useState<number>(
-    aberturaInscricoes.getTime() - new Date().getTime()
+    dataEncerramentoInscricoes.getTime() - new Date().getTime()
   );
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const diff = aberturaInscricoes.getTime() - new Date().getTime();
+      const diff =
+        dataEncerramentoInscricoes.getTime() - new Date().getTime();
       setTempoRestante(diff);
     }, 1000);
 
     return () => clearInterval(interval);
   }, []);
 
-  const inscricoesAbertas = tempoRestante <= 0;
+  const inscricoesEncerradas = tempoRestante <= 0;
 
   const formatarTempo = (ms: number) => {
-    if (ms <= 0) return "";
+    if (ms <= 0) return "Encerradas";
 
     const totalSeconds = Math.floor(ms / 1000);
     const days = Math.floor(totalSeconds / 86400);
@@ -50,6 +52,13 @@ export default function EventCard({
 
     return `${days}d ${hours}h ${minutes}m ${seconds}s`;
   };
+
+  // ⏱️ ALERTAS DE TEMPO
+  const doisDiasMs = 2 * 24 * 60 * 60 * 1000;
+  const umDiaMs = 24 * 60 * 60 * 1000;
+
+  const timerVermelho = tempoRestante <= doisDiasMs;
+  const timerUrgente = tempoRestante <= umDiaMs;
 
   return (
     <Card className="overflow-hidden hover:shadow-lg transition-shadow">
@@ -86,22 +95,36 @@ export default function EventCard({
           <span>{location}</span>
         </div>
 
-        {/* BOTÃO COM TIMER */}
-        <Link to={inscricoesAbertas ? "/formulario-acampadentro" : "#"}>
+      {/* ⏳ TIMER */}
+{!inscricoesEncerradas && (
+  <div
+    className={`
+      text-center font-semibold mb-3 transition-all
+      ${timerVermelho ? "text-red-600" : "text-blue-700"}
+      ${timerUrgente ? "animate-breathe" : ""}
+    `}
+  >
+    ⏰ Inscrições encerram em {formatarTempo(tempoRestante)}
+  </div>
+)}
+
+
+        {/* BOTÃO */}
+        <Link to={!inscricoesEncerradas ? "/formulario-acampadentro" : "#"}>
           <Button
-            disabled={!inscricoesAbertas}
+            disabled={inscricoesEncerradas}
             className={`
               w-full
               ${
-                inscricoesAbertas
-                  ? "bg-yellow-500 hover:bg-yellow-600 text-blue-900"
-                  : "bg-gray-300 text-gray-600 cursor-not-allowed"
+                inscricoesEncerradas
+                  ? "bg-gray-300 text-gray-600 cursor-not-allowed"
+                  : "bg-yellow-500 hover:bg-yellow-600 text-blue-900"
               }
             `}
           >
-            {inscricoesAbertas
-              ? "Inscrever-se"
-              : `Abre em ${formatarTempo(tempoRestante)}`}
+            {inscricoesEncerradas
+              ? "Inscrições encerradas"
+              : "Inscrever-se"}
           </Button>
         </Link>
       </CardContent>

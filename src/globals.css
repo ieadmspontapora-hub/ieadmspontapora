@@ -100,3 +100,22 @@
     @apply bg-background text-foreground;
   }
 }
+@keyframes breathe {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.06);
+    opacity: 0.85;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-breathe {
+  animation: breathe 1.6s ease-in-out infinite;
+}
+
