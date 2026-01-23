@@ -100,11 +100,17 @@ const dataEncerramentoInscricoes = new Date("2026-02-14T23:59:00-04:00");
   <div
     className={`
       text-center font-semibold mb-3 transition-all
+      text-sm sm:text-base
+      leading-tight
+      px-2
       ${timerVermelho ? "text-red-600" : "text-blue-700"}
       ${timerUrgente ? "animate-breathe" : ""}
     `}
   >
-    ⏰ Inscrições encerram em {formatarTempo(tempoRestante)}
+    ⏰ Inscrições encerram em{" "}
+    <span className="whitespace-nowrap">
+      {formatarTempo(tempoRestante)}
+    </span>
   </div>
 )}
 
