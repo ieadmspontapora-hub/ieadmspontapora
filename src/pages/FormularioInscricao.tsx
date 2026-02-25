@@ -155,7 +155,7 @@ export default function FormUmademats() {
                 {/* VÍNCULO */}
                 <div className="space-y-3">
                   <h3 className="font-semibold text-blue-900">
-                    🧾 Vínculo com a Igreja
+                    🧾 Você congrega onde?
                   </h3>
 
                   {[
@@ -191,7 +191,7 @@ export default function FormUmademats() {
                 {/* SITUAÇÃO */}
                 <div className="space-y-3">
                   <h3 className="font-semibold text-blue-900">
-                    🧾 Situação no Umademats
+                    🧾 Atualmente, como está sua participação no Umademats?
                   </h3>
 
                   {[
@@ -215,7 +215,7 @@ export default function FormUmademats() {
                 {/* DECISÃO */}
                 <div className="space-y-3">
                   <h3 className="font-semibold text-blue-900">
-                    🧾 Decisão de Caminhada
+                    🧾 Você deseja continuar caminhando ativamente com o Umademats neste momento?
                   </h3>
 
                   {[
@@ -233,7 +233,7 @@ export default function FormUmademats() {
                 {/* DISPONIBILIDADE */}
                 <div className="space-y-3">
                   <h3 className="font-semibold text-blue-900">
-                    🧾 Disponibilidade
+                    🧾 Você tem disponibilidade para participar dos encontros do Umademats?
                   </h3>
 
                   {[
@@ -256,7 +256,7 @@ export default function FormUmademats() {
                 {/* WHATSAPP */}
                 <div className="space-y-3">
                   <h3 className="font-semibold text-blue-900">
-                    🧾 Grupo de WhatsApp
+                    🧾 Sobre o grupo de WhatsApp do Umademats, você:
                   </h3>
 
                   {[
@@ -275,7 +275,8 @@ export default function FormUmademats() {
                 {/* OBSERVAÇÃO */}
                 <div className="space-y-3">
                   <h3 className="font-semibold text-blue-900">
-                    🧾 Observação
+                    🧾 Existe algo que você gostaria que a liderança soubesse ou melhorasse no Umademats?
+
                   </h3>
 
                   <textarea
